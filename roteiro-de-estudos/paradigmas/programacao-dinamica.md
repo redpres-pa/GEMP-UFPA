@@ -10,7 +10,7 @@ Os passos que tomamos durante o treino em Programação Dinâmica são os seguin
 1. Melhorar soluções recursivas (backtracing) com memoization, servindo de introdução à DPs top down.
 2. Estudar os principais conceitos de Programação Dinâmica, como, estados, subproblemas, transições, subestrutura ótima, sobreposição de subproblemas, etc.
 3. Estudar as formas de projetar DP, *top down* e *bottom up*, e como converter facilmentre entre os dois tipos.
-4. Estudar como implementar DPs bottom up eficientemente ao levar em consideração alguns tópicos de arqutetura de computadores, como memória cache, *branching* etc.
+4. Estudar como implementar DPs bottom up eficientemente ao levar em consideração alguns tópicos de arquitetura de computadores, como memória cache, *branching* etc.
 5. Estudar os estilos de implementação de DP, *backward* e *forward*, vantagens e desvantagens. 
 6. Otimizar soluções com DP, de forma a melhorar a complexidade temporal e/ou espacial dos algoritmos, que recaem em otimizações "estruturais" ou "matemáticas".
 
