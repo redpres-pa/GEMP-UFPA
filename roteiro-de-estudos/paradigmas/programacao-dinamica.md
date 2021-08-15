@@ -7,7 +7,7 @@ A ordem recomendada de leitura foi organizada de forma a trabalhar os aspectos d
 
 Os passos que tomamos durante o treino em Programação Dinâmica são os seguintes:
 
-1. Melhorar soluções recursivas (backtracing) com memoization, servindo de introdução à DPs top down.
+1. Otimizar soluções recursivas (backtracking) com *memoization*, servindo de introdução à DPs top down.
 2. Estudar os principais conceitos de Programação Dinâmica, como, estados, subproblemas, transições, subestrutura ótima, sobreposição de subproblemas, etc.
 3. Estudar as formas de projetar DP, *top down* e *bottom up*, e como converter facilmentre entre os dois tipos.
 4. Estudar como implementar DPs bottom up eficientemente ao levar em consideração alguns tópicos de arquitetura de computadores, como memória cache, *branching* etc.
@@ -37,3 +37,5 @@ Os passos que tomamos durante o treino em Programação Dinâmica são os seguin
 [4] [Dynamic Programming Pattern](https://patterns.eecs.berkeley.edu/?page_id=416)
 
 [5] [Everything About Dynamic Programming](https://codeforces.com/blog/entry/43256)
+
+> Autor: Felipe Cardoso
