@@ -14,7 +14,7 @@ Os passos que tomamos durante o treino em Programação Dinâmica são os seguin
 5. Estudar os estilos de implementação de DP, *backward* e *forward*, vantagens e desvantagens. 
 6. Otimizar soluções com DP, de forma a melhorar a complexidade temporal e/ou espacial dos algoritmos, que recaem em otimizações "estruturais" ou "matemáticas".
 
-> OBS: Uma experiência completa no treino de Programação Dinâmica para programação competitiva não é puramente teória, mas também leva em conta a prática, resolvendo problemas, e as discussões feitas com a comunidade. Logo, as referências nesse documento são puramente complementares.
+> OBS: Uma experiência completa no treino de Programação Dinâmica para programação competitiva não é puramente teórica, mas também leva em conta a prática, resolvendo problemas, e as discussões feitas com a comunidade. Logo, as referências nesse documento são puramente complementares.
 
 
 ## Comentários sobre as referências
