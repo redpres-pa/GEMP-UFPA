@@ -13,6 +13,6 @@ Os principais paradigmas estudados que reúnem conjuntos de técnicas de anális
 
 ## Programação Dinâmica
 
-Os conteúdos relacionados a esse tópico podem ser encontrados na pasta [programacao-dinamica](/programacao-dinamica/).
+Os conteúdos relacionados a esse tópico podem ser encontrados na pasta [programacao-dinamica](/roteiro-de-estudos/paradigmas/programacao-dinamica/).
 
 > As informações neste documento serão atualizadas a medida que formos trabalhando esses tópicos com os alunos que estão treinando com o GEMP.
