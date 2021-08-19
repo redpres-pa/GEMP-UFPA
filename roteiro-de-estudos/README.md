@@ -14,7 +14,7 @@ A seguir estão os principais tópicos de estudo aos quais estaremos incluindo r
 3. Paradigmas de Resolução de Problemas
 4. Teoria dos Grafos
 5. Matemática Computacional
-6. Algoritmos de Processamento de Texto
+6. Algoritmos de Processamento de *strings*
 
 ## Visão Geral
 
@@ -30,7 +30,7 @@ Em **teoria dos grafos** começamos a trabalhar mais fortemente com modelagem co
 
 Embora boa parte do tempo matemática não seja extremamente necessária, **matemática computacional** é muito necessária, pois além de saber dizer se números são primos ou não, trabalhar a base em tópicos como álgebra, teoria dos números, combinatória e geometria ~~computacional~~ pode elevar e muito o nível das discussões, além de melhorar o entendimento da corretude dos algoritmos estudados.
 
-Também estudamos **algoritmos de processamento de texto**, que aprofundam nossos conhecimentos em teoria da computação.
+Também estudamos **algoritmos de processamento de strings**, que aprofundam nossos conhecimentos em teoria da computação.
 
 Vale notar que muitos assuntos não tem dependência entre si, e podem ser vistos em paralelo, em diversos níveis de aprofundamento.
 
