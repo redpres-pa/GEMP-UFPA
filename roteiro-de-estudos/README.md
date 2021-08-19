@@ -26,7 +26,7 @@ Seguimos desenvolvendo essas habilidades de análise durante o estudo de **estru
 
 Depois de fortalecer a base com estruturas de dados, o próximo passo para um maratonista é desenvolver habilidades variadas de como resolver problemas. No tópico de **paradigmas de resolução de problemas** estudamos como atacar problemas por diversos ângulos, analisar quais propriedades *boas* os problemas apresentam e como projetar algoritmos para desenvolver soluções criativas e elegantes.
 
-Em **teoria dos grafos** começamos a trabalhar mais fortemente com modelagem computacional, como *bolinhas* e *tracinhos* podem ser usados para resolver problemas complexos ~~ou não~~ que aparecem com frequência no dia a dia, como, por exemplo, em pesquisa operacional.
+Em **teoria dos grafos** começamos a trabalhar mais fortemente com modelagem computacional, como *bolinhas* e *tracinhos* podem ser usados para resolver problemas complexos ~~ou não~~ que aparecem com frequência no dia a dia, como, por exemplo, achar o menor caminho entre duas localizações num mapa (GPS) ou modelar relações de amizade entre pessoas nas redes sociais.
 
 Embora boa parte do tempo matemática não seja extremamente necessária, **matemática computacional** é muito necessária, pois além de saber dizer se números são primos ou não, trabalhar a base em tópicos como álgebra, teoria dos números, combinatória e geometria ~~computacional~~ pode elevar e muito o nível das discussões, além de melhorar o entendimento da corretude dos algoritmos estudados.
 
