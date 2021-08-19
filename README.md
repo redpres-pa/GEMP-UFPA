@@ -1,4 +1,4 @@
-![GEMP logo](images/logo.png#100x100)
+![GEMP logo](images/logo.png#0.5x0.5)
 # GEMP-UFPA
 Grupo de estudos para programação competitiva, visando principalmente a [OBI](https://olimpiada.ic.unicamp.br/) e a [Maratona de Programação](http://maratona.sbc.org.br/). Nosso objetivo é desenvolver a cultura, e criar uma comunidade, de Programação Competitiva na UFPA.
 
