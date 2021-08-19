@@ -1,6 +1,6 @@
 <p align="center">
   <img width="600" src="images/logo-without-text.png">
-  <h1 align="center">GEMP UFPA</h1>
+  <h1 align="center">GEMP-UFPA</h1>
   <h2 align="center">Grupo de Estudos Para a Maratona de Programação - UFPA</h2>
 </p>
 
