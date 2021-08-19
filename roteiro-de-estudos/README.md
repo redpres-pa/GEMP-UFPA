@@ -28,7 +28,7 @@ Depois de fortalecer a base com estruturas de dados, o próximo passo para um ma
 
 Em **teoria dos grafos** começamos a trabalhar mais fortemente com modelagem computacional, como *bolinhas* e *tracinhos* podem ser usados para resolver problemas complexos ~~ou não~~ que aparecem com frequência no dia a dia, como, por exemplo, achar o menor caminho entre duas localizações num mapa (GPS) ou modelar relações de amizade entre pessoas nas redes sociais.
 
-Embora boa parte do tempo matemática não seja extremamente necessária, **matemática computacional** é muito necessária, pois além de saber dizer se números são primos ou não, trabalhar a base em tópicos como álgebra, teoria dos números, combinatória e geometria ~~computacional~~ pode elevar e muito o nível das discussões, além de melhorar o entendimento da corretude dos algoritmos estudados.
+Matemática não é um pré requisito para competir, porém solidificar a sua base matemática, e mais especificamente **matemática computacional**, tem grandes benefícios, pois além de *saber dizer se um número é primo*, trabalhar essa base eleva muito o nível das discussões, além de fortalecer ainda mais seu conhecimento de lógica, e te possibilitar, por exemplo, fazer análise de corretude de algoritmos e provar por quê eles funcionam.
 
 Também estudamos **algoritmos de processamento de strings**, que aprofundam nossos conhecimentos em teoria da computação.
 
