@@ -30,7 +30,7 @@ Em **teoria dos grafos** começamos a trabalhar mais fortemente com modelagem co
 
 Matemática não é um pré requisito para competir, porém, solidificar a sua base em matemática, e mais especificamente em **matemática computacional**, tem grandes benefícios. Além de *saber dizer se um número é primo*, uma *boa* base fortalece ainda mais a sua lógica, o que eleva bastante o nível das discussões com a comunidade, e também te possibilita, por exemplo, fazer análise de corretude de algoritmos e provar por quê eles funcionam, ou seja, aprofunda cada vez mais seus conhecimentos de análise e projeto de algoritmos.
 
-Também estudamos **algoritmos de processamento de strings**, que aprofundam nossos conhecimentos em teoria da computação.
+Ao estudar **algoritmos de processamento de _strings_**, a maior parte do tempo estamos querendo buscar padrões em textos, e da forma *mais eficiente* possível. Mas para isso combinamos vários dos conhecimentos anteriores, o que torna alguns problemas realmente desafiadores. É um tópico que também serve para introduzir alguns elementos de *teoria dos autômatos* um dos tripés da teoria da computação. 
 
 Vale notar que muitos assuntos não tem dependência entre si, e podem ser vistos em paralelo, em diversos níveis de aprofundamento.
 
