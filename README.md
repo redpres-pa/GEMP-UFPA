@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="600" src="images/logo-without-text.png">
+  <img width="350" src="images/logo-without-text.png">
   <h1 align="center">GEMP-UFPA</h1>
 </p>
 
