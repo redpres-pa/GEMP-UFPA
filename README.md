@@ -35,7 +35,7 @@ Para construir uma *boa* comunidade em volta desta cultura, não bastam apenas n
 
 A primeira coisa que estaremos desenvolvendo é a nossa **autonomia** no processo de aprendizagem. Isso **não significa fazer tudo sozinho**, e sim que estaremos ativamente sempre indo atrás daquilo que queremos aprender, pesquisando documentação, pedindo recomendação de boas referências, e, claro, pedindo ajuda quando necessário.
 
-Alguém disse que **"Se você quer aprender algo, dê aula sobre aquilo"** e, bem, nós levamos isso no coração. Encaramos as oportunidades de ensinar algo para os novos membros como formas de solidificar os conhecimentos que adquirimos até então, pois não basta que faça sentido apenas para nós, mas que consigamos explicar de forma que faça sentido para o outro também.
+Richard Feynman disse que **"Se você quer dominar algo, ensine"** e, bem, nós levamos isso no coração. Encaramos as oportunidades de ensinar algo para os novos membros como formas de solidificar os conhecimentos que adquirimos até então, pois não basta que faça sentido apenas para nós, mas que consigamos explicar de forma que faça sentido para o outro também.
 
 Nossos estudos são **orientados a resolução de problemas**, ou seja, não basta apenas saber a teoria, estamos o tempo inteiro praticando os novos conhecimentos ao resolver problemas em Online Judges, e muitas vezes também estaremos estudando novos tópicos por necessidade, para resolver problemas que não conseguíamos antes.
 
