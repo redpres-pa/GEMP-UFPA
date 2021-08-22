@@ -28,13 +28,13 @@ A partir da imagem, é possível separar o texto do problema em cinco principais
 
 A seguir têm-se uma definição mais elaborada de cada uma das quatro seções destacadas
 
-* **Descrição do Problema**: Trata-se de uma seção inicial em que geralmente o escritor do problema define um contexto para então apresentar uma situação-problema que deve ser resolvida pelo programador. No entanto, em alguns casos (como no exemplo em questão) não existe uma contextualização da situação problema e a tarefa é proposta para o programador de maneira direta, sem que seja necessária uma interpretação do mesmo sob o texto. No exemplo em questão, o problema pede para o programador calcular a média inteira entre dois valores inteiros denotados por $A$ e $B$. 
+* **Descrição do Problema**: Trata-se de uma seção inicial em que geralmente o escritor do problema define um contexto para então apresentar uma situação-problema que deve ser resolvida pelo programador. No entanto, em alguns casos (como no exemplo em questão) não existe uma contextualização da situação problema e a tarefa é proposta para o programador de maneira direta, sem que seja necessária uma interpretação do mesmo sob o texto. No exemplo em questão, o problema pede para o programador calcular a média inteira entre dois valores inteiros denotados por **A** e **B**. 
 
 * **Entradas e Saídas**: Após a descrição do problema e do que o programador deve solucionar, a seção de entradas e saídas indica como devem ser inseridas e mostradas as informações que farão parte do problema. A **Entrada** diz respeito aos valores que serão inseridos no programa pelo teclado (ou por outros meios) para serem processados e gerar os valores de resposta para o problema, denotados como **Saída**. Como dito, a seção de entradas e saídas indica EXATAMENTE como as informações correspondentes devem ser recebidas e mostradas pelo programa de computador, **caso as instruções dessa seção não sejam devidamente respeitadas, a solução não será considerada válida**.
 
 * **Restrições**: A seção de restrições fornece uma descrição dos valores que os parâmetros do problema assumirão durante a correção da solução do programador. No exemplo em questão, a restrição indica que os valores inseridos na entrada e utilizados durante o processamento do programa não possuirão um valor absoluto maior que 1000, isto é, o programa com a solução será avaliado somente considerando casos em que os valores inseridos respeitam essa restrição. Dessa forma, se por acaso o programa de solução não conseguir gerar médias inteiras com valores de entrada maiores que 1000, a resposta continuará sendo considerada como correta, pois a solução exige um cálculo de médias inteiras apenas pra números na entrada cujo valor absoluto seja menor ou igual a 1000.
 
-* **Exemplos de Teste**: A seção fornece para o programador alguns exemplos de como o seu programa de solução deve se comportar. Dessa maneira, são fornecidos alguns valores de entrada e saída, **respeitando as condições impostas na seção de Entrada e Saída**, e a lógica necessária para resolver o problema. Uma prática interessante é entender por que os casos de exemplo retornam determinada saída para uma dada entrada, pois assim o programador tem a confirmação de que este realmente entendeu o que o problema pede que seja solucionado. No exemplo em questão, o primeiro caso de teste conta com dois números inteiros de entrada ($2$ e $2$) e um inteiro $2$ na saída, isso indica que a operação de média inteira realizada entre os valores da entrada terá como resultado na saída o número $2$. 
+* **Exemplos de Teste**: A seção fornece para o programador alguns exemplos de como o seu programa de solução deve se comportar. Dessa maneira, são fornecidos alguns valores de entrada e saída, **respeitando as condições impostas na seção de Entrada e Saída**, e a lógica necessária para resolver o problema. Uma prática interessante é entender por que os casos de exemplo retornam determinada saída para uma dada entrada, pois assim o programador tem a confirmação de que este realmente entendeu o que o problema pede que seja solucionado. No exemplo em questão, o primeiro caso de teste conta com dois números inteiros de entrada (**2** e **2**) e um inteiro **2** na saída, isso indica que a operação de média inteira realizada entre os valores da entrada terá como resultado na saída o número **2**. 
 
 * **Limites**: Os limites impostos pelo problema dizem respeito ao tempo máximo de execução que o programa de solução deve levar para resolver todos os casos de entrada e a quantidade de memória máxima que o programa irá alocar no computador para resolver os casos de teste. De maneira resumida, um programa de computador pode demorar menos ou mais tempo para processar uma determinada quantidade de informações de acordo com as características dessa informação, é possível utilizar soluções diferentes que geram o mesmo resultado para um mesmo problema mas que demandem tempos diferentes para que o resultado seja calculado. Além disso, cada informação recebida ou gerada por um programa de computador aloca uma quantidade definida de espaço na memória que varia de acordo com as características da informação, sendo assim é possível ter soluções diferentes que consumam espaços diferentes na memória. No exemplo em tese, o tempo limite de execução do código é de 1 segundo e o espaço máximo que pode ser ocupado é de 256 megabytes (MB), **caso uma solução não respeite os limites de memória e tempo do problema, ela não será considerada aceitável**.
 
@@ -44,17 +44,17 @@ Finalmente, após identificar as principais seções que formam um problema de P
 
 Após ter o entendimento de como se dá um tipico problema de Programação Competitiva, o próximo passo é entender como funciona o processo de solução de um problema do tipo.
 
-Relendo a seção de **Descrição** do problema, identifica-se que é solicitado um programa de computador que gere, a partir de dois números inteiros na entrada, a média inteira desses dois valores. A média inteira entre dois valores pode ser entendido como a parte inteira da média entre números, sendo assim, para dois números $A$ e $B$, a média inteira será sempre a parte inteira do resultado da operação $\dfrac{A + B}{2}$. Portanto, após identificar o que precisa ser feito para alcançar a solução, o próximo passo é a implementação.
+Relendo a seção de **Descrição** do problema, identifica-se que é solicitado um programa de computador que gere, a partir de dois números inteiros na entrada, a média inteira desses dois valores. A média inteira entre dois valores pode ser entendido como a parte inteira da média entre números, sendo assim, para dois números **A** e **B**, a média inteira será sempre a parte inteira do resultado da operação **(A + B)/2**. Portanto, após identificar o que precisa ser feito para alcançar a solução, o próximo passo é a implementação.
 
 Antes de seguirmos para a implementação, é necessário identificar que tipo de operações deverão ser realizadas para construir o programa de computador com a solução desejada. Sendo assim, podemos separar a nossa solução em três principais partes, que dizem respeito a como o programa deve funcionar
 
-1. Receber os valores $A$ e $B$ do teclado (Entrada);
+1. Receber os valores **A** e **B** do teclado (Entrada);
 2. Realizar o cálculo da média inteira;
 3. Mostrar o cálculo da média inteira (Saída);
 
 Para solucionar o problema, utilizaremos a linguagem de programação C++ que é comumente utilizada em competições de programação.
 
-**1. Receber os valores $A$ e $B$ do teclado (Entrada)**
+**1. Receber os valores A e B do teclado (Entrada)**
 
 A fim de solucionar essa parte do problema, é necessário identificar em nosso código que iremos utilizar funções que recebem informações do teclado e de outros lugares do computador para dentro do programa, então para poder utilizar essas funções incluimos a biblioteca [iostream](https://www.cplusplus.com/reference/iostream/) de C++ no topo do nosso código.
 
@@ -74,12 +74,12 @@ int main(){
 }
 ```
 
-O código acima já consegue criar dois valores inteiros $A$ e $B$ e então por meio da função **std::cin** é possível ler dois valores na entrada e guarda-los nas variáveis $A$ e $B$, respectivamente.
+O código acima já consegue criar dois valores inteiros **A** e **B** e então por meio da função **std::cin** é possível ler dois valores na entrada e guarda-los nas variáveis **A** e **B**, respectivamente.
 
 
 **2. Realizar o cálculo da média inteira**
 
-Agora que possuimos valores guardados em nossas variáveis A e B, podemos calcular a média inteira dos valores $A$ e $B$ ao considerar a parte inteira da operação $\dfrac{A + B}{2}$. Para considerarmos somente a parte inteira, basta que realizemos a operação salvando o resultado numa variável inteira, pois o C++ se encarregará de retirar a parte real do resultado antes de salva-lo na variável inteira (Para mais informações, leia sobre [divisão de inteiros](https://softwareengineering.stackexchange.com/questions/307993/why-does-integer-division-result-in-an-integer)). Sendo assim, criamos uma variável inteira $C$ e guardamos o resultado da operação $\dfrac{A + B}{2}$ nela.
+Agora que possuimos valores guardados em nossas variáveis **A** e **B**, podemos calcular a média inteira dos valores **A** e **B** ao considerar a parte inteira da operação **(A + B)/2**. Para considerarmos somente a parte inteira, basta que realizemos a operação salvando o resultado numa variável inteira, pois o C++ se encarregará de retirar a parte real do resultado antes de salva-lo na variável inteira (Para mais informações, leia sobre [divisão de inteiros](https://softwareengineering.stackexchange.com/questions/307993/why-does-integer-division-result-in-an-integer)). Sendo assim, criamos uma variável inteira **C** e guardamos o resultado da operação **(A + B)/2** nela.
 
 ```cpp
 #include <iostream>
@@ -93,7 +93,7 @@ int main(){
 
 **3. Mostrar o cálculo da média inteira (Saída);**
 
-Finalmente, após ter em nosso programa uma maneira de salvar os valores $A$ e $B$ vindos da entrada e calcular a média inteira entre estes valores, basta mostrar o resultado da operação (que está guardado na variável $C$) na saída do programa. Para realizar a última etapa utilizamos a função **std::cout** e então exibimos a variável $C$ em nossa saída. A seguir temos o código completo do programa 
+Finalmente, após ter em nosso programa uma maneira de salvar os valores **A** e **B** vindos da entrada e calcular a média inteira entre estes valores, basta mostrar o resultado da operação (que está guardado na variável **C**) na saída do programa. Para realizar a última etapa utilizamos a função **std::cout** e então exibimos a variável **C** em nossa saída. A seguir temos o código completo do programa 
 
 ```cpp
 #include <iostream>
@@ -139,7 +139,7 @@ int main(){
 }
 ```
 
-Ao submeter a solução contendo esse engano no código, o Juíz irá gerar um veredito diferente do **Accepted**. Nesse caso, pelo fato da operação guardada na variável $C$ não ser a operação de média inteira, então o veredito do Juíz é **Wrong Answer**, isto é, nosso programa não gera pelo menos uma das saída como esperado.
+Ao submeter a solução contendo esse engano no código, o Juíz irá gerar um veredito diferente do **Accepted**. Nesse caso, pelo fato da operação guardada na variável **C** não ser a operação de média inteira, então o veredito do Juíz é **Wrong Answer**, isto é, nosso programa não gera pelo menos uma das saída como esperado.
 
 <p align="center">
   <img src="/images/media-inteira-wa.png">
