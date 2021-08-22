@@ -7,7 +7,7 @@ Grupo de estudos para programação competitiva, visando principalmente a [OBI](
 
 ## Apresentação
 
-**Nossos objetivos** como grupo são desenvolver a cultura de Programação Competitiva na UFPA e criar uma comunidade na mesma. Além de ser bastante divertido resolver problemas, acreditamos que participar dessas competições acadêmicas traz mais visibilidade tanto para a UFPA quanto para o Pará no cenário nacional em computação. Porém, há certas limitações para o que indivíduos isolados podem fazer, principalmente quando estes não tem o ambiente ideal para se dedicar somente aos estudos.
+**Nossos objetivos** como grupo são desenvolver a cultura de Programação Competitiva na UFPA e criar uma comunidade na mesma. Além de ser bastante divertido resolver problemas, participar dessas competições acadêmicas nos motiva a continuar aprendendo e desenvolvendo habilidades que serão importantes se quisermos ser bons profissionais, e também, traz mais visibilidade tanto para a UFPA quanto para o Pará no cenário nacional em computação. Porém, há certas limitações para o que indivíduos isolados podem fazer, principalmente quando estes não tem o ambiente ideal para se dedicar somente aos estudos.
 
 Levando em consideração a desigualdade que as pessoas enfrentam, para que todos tenham oportunidades, queremos desenvolver a cultura não só em questão de performance em competições ou em números de participação, mas também que nossos membros não deixem seu tempo de lazer de lado, nem que sacrifiquem outros aspectos da sua vida para se dedicar ao treino.
 
