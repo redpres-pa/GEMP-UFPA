@@ -11,7 +11,7 @@ Grupo de estudos para programação competitiva, visando principalmente a [OBI](
 
 Levando em consideração a desigualdade que as pessoas enfrentam, para que todos tenham oportunidades, queremos desenvolver a cultura não só em questão de performance em competições ou em números de participação, mas também que nossos membros não deixem seu tempo de lazer de lado, nem que sacrifiquem outros aspectos da sua vida para se dedicar ao treino.
 
-### Como estamos tentando atingir esses objetivos?
+### O que estamos fazendo para atingir esses objetivos
 Algumas coisas que estamos fazendo atualmente são:
 - Apresentar anualmente o GEMP e o "mundo" de programação competitiva na semana dos calouros da UFPA.
 - Treinar para continuar melhorando nossas participações em finais brasileiras da Maratona de Programação.
