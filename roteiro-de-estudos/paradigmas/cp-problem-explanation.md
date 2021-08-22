@@ -1,4 +1,12 @@
-# O que é Programação Competitiva?
+# Tabela de Conteúdos
+  * [O que é Programação Competitiva?](#o-que-é-programação-competitiva)
+  * [Como funciona um problema de Programação Competitiva?](#como-funciona-um-problema-de-programação-competitiva)
+  * [Solucionando o Problema de Programação Competitiva](#solucionando-o-problema-de-programação-competitiva)
+  * [Submetendo a Solução](#submetendo-a-solução)
+  * [O Juiz](#o-juiz)
+  * [Vereditos](#vereditos)
+
+## O que é Programação Competitiva?
 
 Inicialmente, é necessário que não restem dúvidas para o leitor acerca das definições que estão sendo empregadas. Dessa forma, é possível descrever Programação Competitiva a partir da seguinte definição de um experiente programador competitivo [Ashar Fuadi](https://www.quora.com/What-is-competitive-programming-2/answer/Ashar-Fuadi)
 
