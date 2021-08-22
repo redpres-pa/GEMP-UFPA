@@ -18,9 +18,7 @@ Algumas coisas que estamos fazendo atualmente são:
 - Ensinar os tópicos de computação para novos alunos por meio de encontros semanais e discussões em grupo.
 - Tentar firmar parcerias com a faculdade de computação ou laboratórios da universidade.
 
-Além disso, incentivamos um **ritmo saudável de estudo**, além de dar suporte levando em conta as especificidades de cada pessoa. 
-
-Em relação aos estudos, **nosso foco é menos na quantidade e mais na qualidade desse treino**. Acreditamos que praticar de forma **consistente** e com os **melhores materiais disponíveis** vale mais do que horas a fio pelas madrugadas. E por isso os membros do GEMP também tem a preocupação de fazer **curadoria** sobre as principais referências de estudo em programação competitiva.
+Além disso, nem sempre é fácil achar um *bom* material para estudo no mar de conteúdo que tem disponível na internet. Portanto os membros do GEMP também tem a preocupação de fazer **curadoria** sobre as principais referências de estudo em programação competitiva, para que menos tempo seja gasto procurando referências minimamente boas, e mais tempo gasto efetivamente estudando e praticando os tópicos de interesse.
 
 ### Nossos valores
 Para construir uma *boa* comunidade em volta desta cultura, não bastam apenas números. Estamos sempre tentando nos desenvolver mais como pessoas de forma que isso também tenha um impacto real na interação com nossos colegas e no processo de aprendizagem coletivo. Efetivamente estamos sempre trabalhando:
@@ -40,6 +38,8 @@ Richard Feynman disse que **"Se você quer dominar algo, ensine"** e, bem, nós 
 Nossos estudos são **orientados a resolução de problemas**, ou seja, não basta apenas saber a teoria, estamos o tempo inteiro praticando os novos conhecimentos ao resolver problemas em Online Judges, e muitas vezes também estaremos estudando novos tópicos por necessidade, para resolver problemas que não conseguíamos antes.
 
 Estamos o tempo inteiro discutindo tópicos com o grupo para **acelerar nosso aprendizado e compartilhar experiência**. Se lemos uma referência, damos nossa opinião sobre a leitura. Também comparamos ideias e implementações para **aprender mais de 100%** com cada problema resolvido.
+
+Também incentivamos um **ritmo saudável de estudo**, além de dar suporte levando em conta as especificidades de cada pessoa. Por isso, nosso foco é **menos na quantidade e mais na qualidade** desse treino. Acreditamos que praticar de forma **consistente** e com os **melhores materiais disponíveis** vale mais do que horas a fio pelas madrugadas.
 
 ## Membros
 Membros Coordenadores são os membros que estão planejando e executando novas atividades do grupo.
