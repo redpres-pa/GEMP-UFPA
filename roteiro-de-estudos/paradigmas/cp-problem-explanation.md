@@ -1,6 +1,6 @@
 # O que é Programação Competitiva?
 
-Inicialmente, é necessário que não restem dúvidas para o leitor acerca das definições que estão sendo empregadas. Dessa forma, é possível descrever Programação Competitiva a partir da seguinte definição
+Inicialmente, é necessário que não restem dúvidas para o leitor acerca das definições que estão sendo empregadas. Dessa forma, é possível descrever Programação Competitiva a partir da seguinte definição de um experiente programador competitivo [Ashar Fuadi](https://www.quora.com/What-is-competitive-programming-2/answer/Ashar-Fuadi)
 
 > *“Competitive programming is solving well-defined problems by writing computer programs under specified limits”*
 
@@ -56,7 +56,7 @@ Para solucionar o problema, utilizaremos a linguagem de programação C++ que é
 
 **1. Receber os valores $A$ e $B$ do teclado (Entrada)**
 
-A fim de solucionar essa parte do problema, é necessário identificar em nosso código que iremos utilizar funções que recebem informações do teclado e de outros lugares do computador para dentro do programa, então para poder utilizar essas funções incluimos a biblioteca **<iostream>** de C++ no topo do nosso código.
+A fim de solucionar essa parte do problema, é necessário identificar em nosso código que iremos utilizar funções que recebem informações do teclado e de outros lugares do computador para dentro do programa, então para poder utilizar essas funções incluimos a biblioteca [iostream](https://www.cplusplus.com/reference/iostream/) de C++ no topo do nosso código.
 
 ```cpp
 #include <iostream> // Inclui no programa biblioteca que possui funções para entrada e saída
@@ -79,7 +79,7 @@ O código acima já consegue criar dois valores inteiros $A$ e $B$ e então por 
 
 **2. Realizar o cálculo da média inteira**
 
-Agora que possuimos valores guardados em nossas variáveis A e B, podemos calcular a média inteira dos valores $A$ e $B$ ao considerar a parte inteira da operação $\dfrac{A + B}{2}$. Para considerarmos somente a parte inteira, basta que realizemos a operação salvando o resultado numa variável inteira, pois o C++ se encarregará de retirar a parte real do resultado antes de salva-lo na variável inteira. Sendo assim, criamos uma variável inteira $C$ e guardamos o resultado da operação $\dfrac{A + B}{2}$ nela.
+Agora que possuimos valores guardados em nossas variáveis A e B, podemos calcular a média inteira dos valores $A$ e $B$ ao considerar a parte inteira da operação $\dfrac{A + B}{2}$. Para considerarmos somente a parte inteira, basta que realizemos a operação salvando o resultado numa variável inteira, pois o C++ se encarregará de retirar a parte real do resultado antes de salva-lo na variável inteira (Para mais informações, leia sobre [divisão de inteiros](https://softwareengineering.stackexchange.com/questions/307993/why-does-integer-division-result-in-an-integer)). Sendo assim, criamos uma variável inteira $C$ e guardamos o resultado da operação $\dfrac{A + B}{2}$ nela.
 
 ```cpp
 #include <iostream>
@@ -145,7 +145,7 @@ Ao submeter a solução contendo esse engano no código, o Juíz irá gerar um v
   <img src="/images/media-inteira-wa.png">
 </p>
 
-Além do **Accepted** e do **Wrong Answer**, existem outros tipos de vereditos que o Juíz pode retornar para o seu programa, alguns relacionados com a ultrapassagem dos limites de tempo ou de memória e outros relacionados com problemas de execução do seu código. Você pode realizar uma leitura sobre os tipos mais comuns de vereditos neste [link](https://onlinejudge.org/index.php?option=com_content&task=view&id=16&Itemid=31).
+Além do **Accepted** e do **Wrong Answer**, existem outros tipos de vereditos que o Juíz pode retornar para o seu programa, alguns relacionados com a ultrapassagem dos limites de tempo ou de memória e outros relacionados com problemas de execução do seu código. Você pode realizar uma leitura sobre os tipos mais comuns de vereditos nesta página [Verdict information](https://onlinejudge.org/index.php?option=com_content&task=view&id=16&Itemid=31) do site [Online Judge](https://onlinejudge.org/index.php).
 
  
 > Autor: Carlos Dias (CarZ)
