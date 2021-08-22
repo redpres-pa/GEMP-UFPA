@@ -20,7 +20,7 @@ Algumas coisas que estamos fazendo atualmente são:
 
 Além disso, incentivamos um **ritmo saudável de estudo**, além de dar suporte levando em conta as especificidades de cada pessoa. 
 
-Em relação aos estudos, **nosso foco é menos na quantidade e mais na qualidade desse treino**. Acreditamos que praticar de forma **consistente** e com os **melhores materiais disponíveis** vale mais do que horas a fio pelas as madrugadas. E por isso os membros do GEMP também tem a preocupação de fazer **curadoria** sobre as principais referências de estudo em programação competitiva.
+Em relação aos estudos, **nosso foco é menos na quantidade e mais na qualidade desse treino**. Acreditamos que praticar de forma **consistente** e com os **melhores materiais disponíveis** vale mais do que horas a fio pelas madrugadas. E por isso os membros do GEMP também tem a preocupação de fazer **curadoria** sobre as principais referências de estudo em programação competitiva.
 
 ### Nossos valores
 Para construir uma *boa* comunidade em volta desta cultura, não bastam apenas números. Estamos sempre tentando nos desenvolver mais como pessoas de forma que isso também tenha um impacto real na interação com nossos colegas e no processo de aprendizagem coletivo. Efetivamente estamos sempre trabalhando:
