@@ -32,7 +32,7 @@ A imagem a seguir contém a descrição do problema [Média Inteira](https://nep
   <img src="/images/media-inteira-neps.png">
 </p>
 
-A partir da imagem, é possível separar o texto do problema em cinco principais seções: **Descrição do problema**, **Entrada e saída**, **Restrições** ,**Exemplos de teste** e **Limites**. É importante ressaltar que as cinco seções descritas sempre estarão presentes num problema de programação competitiva, pois são estas seções que garantem a definição de um *problema bem definido*.
+A partir da imagem, é possível separar o texto do problema em cinco principais seções: **Descrição do problema**, **Entrada e saída**, **Restrições**, **Exemplos de teste** e **Limites**. É importante ressaltar que as cinco seções descritas sempre estarão presentes num problema de programação competitiva, pois são estas seções que garantem a definição de um *problema bem definido*.
 
 A seguir têm-se uma definição mais elaborada de cada uma das cinco seções destacadas
 
