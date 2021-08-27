@@ -5,6 +5,10 @@
 
 Grupo de estudos para programação competitiva, visando principalmente a [OBI](https://olimpiada.ic.unicamp.br/) e a [Maratona de Programação](http://maratona.sbc.org.br/). Nosso objetivo é desenvolver a cultura, e criar uma comunidade, de Programação Competitiva na UFPA.
 
+## Tabela de Conteúdos
+0. [Apresentação](/README.md#apresentação)
+1. [Membros](/README.md#membros)
+
 ## Apresentação
 
 **Nossos objetivos** como grupo são desenvolver a cultura de Programação Competitiva na UFPA e criar uma comunidade na mesma. Além de ser bastante divertido resolver problemas, participar dessas competições acadêmicas nos motiva a continuar aprendendo e desenvolvendo habilidades que serão importantes se quisermos ser bons profissionais, e também, traz mais visibilidade tanto para a UFPA quanto para o Pará no cenário nacional em computação. Porém, há certas limitações para o que indivíduos isolados podem fazer, principalmente quando estes não tem o ambiente ideal para se dedicar somente aos estudos.
