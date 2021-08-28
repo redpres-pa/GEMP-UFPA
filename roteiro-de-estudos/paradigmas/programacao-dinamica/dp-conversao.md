@@ -56,11 +56,11 @@ f(n) = f(n-1) + f(n-2) + f(n-3) + f(n-4) + f(n-5) + f(n-6)
 
 Para completar nossa solução, precisamos agora definir os casos base dessa recursão. 
 Casos base são aqueles subproblemas que são tão triviais que a resposta é quase óbvia, e você nem precisa pensar muito pra responder. 
-No nosso problema é:
+No nosso problema são:
 
 - Se n = 0, então f(n) = 1, pois só tem uma forma de fazer soma 0, que é **não fazer nada**. Se você quer fazer uma soma 0, então você não vai fazer nenhum lançamento, pois já tem a soma desejada, e essa **é uma forma válida de contar em combinatória**.
 
-- Se n < 0, então f(n) = 0, pois não tem como você fazer uma soma negativa, dado que fazendo zero ou mais lançamentos o resultado é sempre nãõ negativo.
+- Se n < 0, então f(n) = 0, pois não tem como você fazer uma soma negativa, dado que fazendo zero ou mais lançamentos a soma de faces obtida é sempre não negativa.
 
 > Para saber mais sobre a opção de "não fazer nada" em combinatória leia este artigo (TODO: incluir link). 
 
@@ -85,8 +85,8 @@ int f(int n) {
 }
 ```
 
-Porém, embora esta solução esteja correta, ela é muito *lenta*. De fato a complexidade temporal dessa solução é exponencial, em notação *Big-O* ela é `O(6^n)`. 
-Mas, como sabemos, a lentidão dessa solução ocorre do fato de que um estado é recalculado várias e várias vezes, devido à **sobreposição de subproblemas**. Então para melhorar nossa solução, basta aplicar **memoization**:
+Porém, embora esta solução esteja correta, ela é muito **lenta**. De fato, a classe de complexidade temporal dessa solução é exponencial, em notação *Big-O* ela é `O(6^n)`. 
+Mas, como sabemos, a lentidão dessa solução ocorre do fato de que um estado é recalculado várias e várias vezes, devido à **sobreposição de subproblemas**. Então, para melhorar nossa solução basta aplicar **memoization**:
 
 ```cpp
 const int MOD = 1e9 + 7;
@@ -116,7 +116,7 @@ int f(int n) {
   return dp[n] = ans;
 }
 ```
-E *voí la!* Com essas duas linhas de código agora a complexidade temporal do nosso algoritmo é `O(n)`!! Sempre que calculamos alguma coisa guardamos essa informação em um tabela, e quando chegamos novamente em um estado previamente calculado, em vez de calcular tudo de novo só usamos a resposta guardada na tabela.
+E *voí la!* Com essas duas linhas de código agora a complexidade temporal do nosso algoritmo é `O(n)`, linear!! Sempre que calculamos alguma coisa guardamos essa informação em um tabela, e quando chegamos novamente em um estado previamente calculado, em vez de calcular tudo de novo só usamos a resposta guardada na tabela.
 
 Agora que temos uma solução top-down para o nosso problema, podemos começar a conversão para bottom-up!
 
