@@ -15,12 +15,20 @@ O objetivo deste texto então é apresentar um passo a passo para o leitor que a
 
 ## Tabela de Conteúdos
 
-0. Fazer uma DP top down
+0. Passo 0: Fazer uma DP top down
 1. Passo 1: Construir casos bases
 2. Passo 2: definir ordem de iteração dos laços
 3. Passo 3: Copiar as transições da top down
 4. Passo 4: Trocar chamadas recursivas por acessos à tabela
 5. Passo 5: Guardar a resposta calculada
+
+## Passo 0: Fazer uma DP Top down
+
+Bem, se você quer converter sua solução de top down para bottom up, você precisa já ter uma solução para o problema que está tentando resolver. 
+Se você não sabe como fazer uma solução top down ainda, pode dar uma olhada na referência [1] do nosso [RoadMap](../dp-roadmap.md) de programação dinâmica ou pedir mais orientações para a comunidade. 
+A partir daqui assumiremos que o leitor conhece os conceitos de programação dinâmica e que consegue fazer uma solução top down para um problema deste tópico.
+
+
 
 
 /* comentários Conversão DP top-down => DP bottom up
