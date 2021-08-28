@@ -28,6 +28,14 @@ Bem, se você quer converter sua solução de top down para bottom up, você pre
 Se você não sabe como fazer uma solução top down ainda, pode dar uma olhada na referência [1] do nosso [RoadMap](../dp-roadmap.md) de programação dinâmica ou pedir mais orientações para a comunidade. 
 A partir daqui assumiremos que o leitor conhece os conceitos de programação dinâmica e que consegue fazer uma solução top down para um problema deste tópico.
 
+Para que este passo a passo faça mais sentido, iremos trabalhar um exemplo ao longo da discussão. Iremos resolver o problema [Dice Combinatinons](https://cses.fi/problemset/task/1633) do online judge [CSES](https://cses.fi/problemset/).
+
+> Se você ainda não resolveu este problema, pare e tente antes de continuar.
+
+
+
+## Passo 1: Construir casos bases
+
 
 
 
