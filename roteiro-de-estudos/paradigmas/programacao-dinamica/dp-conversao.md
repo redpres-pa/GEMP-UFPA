@@ -15,12 +15,12 @@ O objetivo deste texto então é apresentar um passo a passo para o leitor que a
 
 ## Tabela de Conteúdos
 
-0. Passo 0: Fazer uma DP top down
-1. Passo 1: Construir casos bases
-2. Passo 2: definir ordem de iteração dos laços
-3. Passo 3: Copiar as transições da top down
-4. Passo 4: Trocar chamadas recursivas por acessos à tabela
-5. Passo 5: Guardar a resposta calculada
+- Passo 0: Fazer uma DP top down
+- Passo 1: Construir casos bases
+- Passo 2: definir ordem de iteração dos laços
+- Passo 3: Copiar as transições da top down
+- Passo 4: Trocar chamadas recursivas por acessos à tabela
+- Passo 5: Guardar a resposta calculada
 
 ## Passo 0: Fazer uma DP Top down
 
