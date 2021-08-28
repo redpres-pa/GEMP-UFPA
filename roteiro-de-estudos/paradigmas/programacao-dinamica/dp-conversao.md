@@ -26,7 +26,7 @@ O objetivo deste texto então é apresentar um passo a passo para o leitor que a
 
 Bem, se você quer converter sua solução de top down para bottom up, você precisa já ter uma solução para o problema que está tentando resolver. 
 Se você não sabe como fazer uma solução top down ainda, pode dar uma olhada na referência [1] do nosso [RoadMap](./dp-roadmap.md) de programação dinâmica ou pedir mais orientações para a comunidade. 
-A partir daqui assumiremos que o leitor conhece os conceitos de programação dinâmica e que consegue fazer uma solução top down para um problema deste tópico.
+A partir daqui assumiremos que o leitor conhece os conceitos de programação dinâmica.
 
 Para que este passo a passo faça mais sentido, iremos trabalhar um exemplo ao longo da discussão. Iremos resolver o problema [Dice Combinatinons](https://cses.fi/problemset/task/1633) do online judge [CSES](https://cses.fi/problemset/).
 
@@ -46,13 +46,20 @@ Para cada lançamento do dado você pode obter resultados de 1 a 6, e como cada 
 - todas as formas de fazer a soma *n-5*, e tirar 5 no dado para obter soma n-5 + 5 = n.
 - todas as formas de fazer a soma *n-6*, e tirar 6 no dado para obter soma n-6 + 6 = n.
 
-Dessa forma vemos uma relação entre a resposta de quantas formas há de fazer soma *n* a partir quantas formas há de fazer somas *n-1*, *n-2*, *n-3*, *n-4*, *n-5* e *n-6*. Mais especificamente, se criarmos uma função f(n) que significa "de quantas formas podemos obter soma n lançando dados de 6 faces", temos a seguinte relação *recursiva*:
+Dessa forma vemos uma relação entre a resposta de quantas formas há de fazer soma *n* a partir de quantas formas há de fazer somas *n-1*, *n-2*, *n-3*, *n-4*, *n-5* e *n-6*. Mais especificamente, se criarmos uma função f(n) que significa "de quantas formas podemos obter soma n lançando dados de 6 faces", temos a seguinte relação *recursiva*:
 
 ```
 f(n) = f(n-1) + f(n-2) + f(n-3) + f(n-4) + f(n-5) + f(n-6)
 ```
 
-## Passo 1: Construir casos bases
+> Esse é um bom momento para observar que o problema que queremos resolver tem a propriedade de **subestrutura ótima**, dado que a resposta para o nosso problema depende da resposta de subproblemas mais simples.
+
+
+
+
+
+
+## Passo 1: Construir casos bases (TODO)
 
 
 
