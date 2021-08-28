@@ -8,7 +8,7 @@ Porém, para maratonistas inexperientes projetar uma DP bottom up pode não ser 
 Bom, embora pensar direto numa implementação bottom up possa ser um pouco dificíl de primeira, converter uma DP top down para bottom up é fácil. Então temos a seguinte estratégia para implementar DP bottom up: Começar implementando top down, e depois converter de top down para bottom up.
 
 <p align="center">
-  <img width="350" src="images/panorama-dp.png">
+  <img width="350" src="/images/panorama-dp.png">
 </p>
 
 O objetivo deste texto então é apresentar um passo a passo para o leitor que ainda não se sente tão confortável em projetar Programação Dinâmica bottom up diretamente, para que continuem melhorando ainda mais suas habilidades enquanto vão aprofundando seu entendimento ao resolver mais problemas e discutir com a comunidade.
