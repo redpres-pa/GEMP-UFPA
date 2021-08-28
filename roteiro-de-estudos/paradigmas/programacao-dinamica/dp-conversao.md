@@ -116,7 +116,16 @@ int f(int n) {
   return dp[n] = ans;
 }
 ```
-E *voí la!* Com essas duas linhas de código agora a complexidade temporal do nosso algoritmo é `O(n)`, linear!! Sempre que calculamos alguma coisa guardamos essa informação em um tabela, e quando chegamos novamente em um estado previamente calculado, em vez de calcular tudo de novo só usamos a resposta guardada na tabela.
+E *voí la!* Com essas duas linhas de código agora a complexidade temporal do nosso algoritmo é `O(n)`, linear!!
+Sempre que calculamos alguma coisa guardamos essa informação em um tabela, e quando chegamos novamente em um estado previamente calculado, em vez de calcular tudo de novo só usamos a resposta guardada na tabela.
+Dessa forma garantimos que cada estado só é calculado uma vez, e que o esforço computacional pra calcular a resposta de um estado é `O(1)` (as seis iterações do laço de repetição).
+
+Com essa DP já conseguiremos um *Accepted* no problema. Podemos submeter e ver quanto tempo nosso programa levou nos casos de teste:
+
+<p align="center">
+  <img width="350" src="/images/ac1.png">
+  <a href="https://cses.fi/paste/db6be769a1459c102a2193/" target="_blank">Submissão</a>
+</p>
 
 Agora que temos uma solução top-down para o nosso problema, podemos começar a conversão para bottom-up!
 
