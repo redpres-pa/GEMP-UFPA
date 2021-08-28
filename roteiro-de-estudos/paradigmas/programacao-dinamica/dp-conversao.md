@@ -13,10 +13,17 @@ Bom, embora pensar direto numa implementação bottom up possa ser um pouco difi
 
 O objetivo deste texto então é apresentar um passo a passo para o leitor que ainda não se sente tão confortável em projetar Programação Dinâmica bottom up diretamente, para que continuem melhorando ainda mais suas habilidades enquanto vão aprofundando seu entendimento ao resolver mais problemas e discutir com a comunidade.
 
-## Tabela de Conteúdos (TODO)
+## Tabela de Conteúdos
+
+0. Fazer uma DP top down
+1. Passo 1: Construir casos bases
+2. Passo 2: definir ordem de iteração dos laços
+3. Passo 3: Copiar as transições da top down
+4. Passo 4: Trocar chamadas recursivas por acessos à tabela
+5. Passo 5: Guardar a resposta calculada
 
 
-/* Conversão DP top-down => DP bottom up
+/* comentários Conversão DP top-down => DP bottom up
 
 
 //1º passo - construir casos bases <=> base da recursão
