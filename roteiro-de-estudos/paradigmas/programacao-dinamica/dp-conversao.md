@@ -1,3 +1,5 @@
+> Autor: Felipe Cardoso
+
 # Conversão de DP Top-down para Bottom-up
 
 Durante o treino no tópico de Programação Dinâmica, com o aumento do nível de dificuldade dos problemas vemos uma tendência de soluções com DP projetadas *Bottom up* ganhando mais relevância, seja por ser amigável a otimizações, ou por ter *constantes* menores. 
@@ -155,7 +157,7 @@ void solve(int N) { //N é a soma desejada
 }
 ```
 
-## Passo 2: Definir ordem de iteração dos laços (TODO)
+## Passo 2: Definir ordem de iteração dos laços
 
 Na bottom-up estaremos percorrendo a tabela com laços de repetição, e como tem uma relação de dependência entre os subproblemas, alguns tem que ser calculados antes de outros, devemos escolher uma ordem (do menor para o maior ou do maior para o menor) para que as respostas sejam calculadas corretamente.
 
@@ -249,26 +251,14 @@ E aí está! Sua solução na forma bottom-up bonitinha! Ao submeter ([código](
 
 Em que nos casos de teste mais computacionalmente intensivos tivemos uma melhora de 50% no nosso tempo de execução!
 
-## Resume e Conclusão
+## Resumo e Conclusão
 
+Recapitulando o que fizemos, podemos resumir os passos para conversão em:
 
+- Passo 1: construir casos bases (**são os mesmos casos base da recursão**)
+- Passo 2: definir ordem de iteração dos laços (**basta olhar para as transições**, se a recursão vai do maior para o menor subproblema, os laços tem que iterar do menor para o maior subproblema, e vice-versa)
+- Passo 3: Copiar as transições da top-down para a bottom-up (literalmente)
+- Passo 4: Trocar chamadas recursivas por acesso direto à tabela.
+- Passo 5: Guardar a resposta calcula (igual como é feito na top-down)
 
-
-
-
-/* Resumo Conversão DP top-down => DP bottom up
-
-
-//1º passo - construir casos bases <=> base da recursão
-
-//2º passo - definir ordem para calcular estados <=> ordem que vai percorrer a matriz
-
-//(dica: se estiver difícil, desenha uma tabela, e faz setinha pra representar as dependências do que tem que estar calculado antes)
-
-//3º passo - copia e cola as transições do top-down pro bottom-up
-
-//4º passo - troca chamada recursiva pelo acesso do estado na tabela
-
-//5º passo - guardar a resposta calculada
-
-> Autor: Felipe Cardoso
+E com a versão bottom-up da DP você pode tentar atingir novos patamares, como aplicar otimizações de dp ~~inclusive, é possível otimizar as transições dessa DP bottom-up para calcular a resposta pra um subproblema com apenas uma operação em vez de seis, fica o desafio~~, ou implementar o algoritmo levando em consideração aspectos arquiteturais da máquina para aumentar a performance do seu programa!
