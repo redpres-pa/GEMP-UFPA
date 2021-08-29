@@ -150,28 +150,26 @@ const int MOD = 1e9 + 7; //necessário para o problema
 const int MAXN = 1e6 + 7; 
 int dp[MAXN];
 
-void solve(int n) { //n é a soma desejada
+void solve(int N) { //N é a soma desejada
   dp[0] = 1; //soma = 0, resposta é 1
 }
 ```
-
-E isso conclui o primeiro passo. 
 
 ## Passo 2: Definir ordem de iteração dos laços (TODO)
 
 Na bottom-up estaremos percorrendo a tabela com laços de repetição, e como tem uma relação de dependência entre os subproblemas, alguns tem que ser calculados antes de outros, devemos escolher uma ordem (do menor para o maior ou do maior para o menor) para que as respostas sejam calculadas corretamente.
 
 Para definir esta ordem, **basta olharmos para as transições** da top down.
-Para calcular a resposta pro estado *n*, precisamos que as respostas pros estados *n-1*, *n-2*, ..., *n-6* já tenham sido calculadas, ou seja, precisamos que somas *menores* já tenham sido calculadas. Isso nos diz que devemos computar as respostas da menor soma para a maior! 
+Para calcular a resposta pro estado *n*, precisamos que as respostas pros estados *n-1*, *n-2*, ..., *n-6* já tenham sido calculadas, ou seja, precisamos que somas *menores* já tenham sido calculadas. Isso nos diz que devemos computar as respostas da menor soma para a maior! Logo:
 
 ```cpp
 const int MOD = 1e9 + 7;
 const int MAXN = 1e6 + 7;
 int dp[MAXN];
 
-void solve(int n) {
+void solve(int N) {
   dp[0] = 1;
-  for (int i = 1; i <= n; ++i) { //itera da menor soma para a maior
+  for (int n = 1; n <= N; ++n) { //itera da menor soma para a maior
 
   }
 }
@@ -186,9 +184,9 @@ const int MOD = 1e9 + 7;
 const int MAXN = 1e6 + 7;
 int dp[MAXN];
 
-void solve(int n) {
+void solve(int N) {
   dp[0] = 1;
-  for (int i = 1; i <= n; ++i) {
+  for (int n = 1; n <= N; ++n) {
     //mesmas transições da top-down
     int ans = 0;
     for (int i = 1; i <= 6 && n-i >= 0; ++i) { //evita acesso a índices negativos
@@ -199,7 +197,26 @@ void solve(int n) {
 }
 ```
 
+## Passo 4: Trocar chamadas recursivas por acessos à tabela
 
+Como podemos ver, tem uma chamada para nossa função *f* no meio do código. Neste passo iremos apenas trocar qualquer chamada à função por acessos diretos à tabela:
+
+```cpp
+const int MOD = 1e9 + 7;
+const int MAXN = 1e6 + 7;
+int dp[MAXN];
+
+void solve(int N) {
+  dp[0] = 1;
+  for (int n = 1; n <= N; ++n) {
+    int ans = 0;
+    for (int i = 1; i <= 6 && n-i >= 0; ++i) {
+      ans += dp[n-i]; //troca chamada recursiva por acesso à tabela
+      ans %= MOD;
+    }
+  }
+}
+```
 
 
 
