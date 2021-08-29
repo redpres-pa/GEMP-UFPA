@@ -22,7 +22,7 @@ O objetivo deste texto então é apresentar um passo a passo para o leitor que a
 - Passo 3: Copiar as transições da top down
 - Passo 4: Trocar chamadas recursivas por acessos à tabela
 - Passo 5: Guardar a resposta calculada
-- Resumo
+- Resumo e Conclusão
 
 ## Passo 0: Fazer uma DP Top down
 
@@ -117,7 +117,7 @@ int f(int n) {
   return dp[n] = ans;
 }
 ```
-E *voí la!* Com essas duas linhas de código agora a complexidade temporal do nosso algoritmo é `O(n)`, linear!!
+E aí está! Com essas duas linhas de código agora a complexidade temporal do nosso algoritmo é `O(n)`, linear!!
 Sempre que calculamos alguma coisa guardamos essa informação em um tabela, e quando chegamos novamente em um estado previamente calculado, em vez de calcular tudo de novo só usamos a resposta guardada na tabela.
 Dessa forma garantimos que cada estado só é calculado uma vez, e que o esforço computacional pra calcular a resposta de um estado é `O(1)` (as seis iterações do laço de repetição).
 
@@ -217,6 +217,41 @@ void solve(int N) {
   }
 }
 ```
+
+## Passo 5: Guardar a resposta calculada
+
+Se você já calculou a resposta para um subproblema, a única coisa que falta é guardar essa resposta na tabela:
+
+```cpp
+const int MOD = 1e9 + 7;
+const int MAXN = 1e6 + 7;
+int dp[MAXN];
+
+void solve(int N) {
+  dp[0] = 1;
+  for (int n = 1; n <= N; ++n) {
+    int ans = 0;
+    for (int i = 1; i <= 6 && n-i >= 0; ++i) {
+      ans += dp[n-i];
+      ans %= MOD;
+    }
+
+    dp[n] = ans; //salva a resposta
+  }
+}
+```
+
+E aí está! Sua solução na forma bottom-up bonitinha! Ao submeter ([código](https://cses.fi/paste/8f78936ba784b0152a3100/)) temos o seguinte resultado:
+
+<p align="center">
+  <img width="350" src="/images/ac2.png"/>
+</p>
+
+Em que nos casos de teste mais computacionalmente intensivos tivemos uma melhora de 50% no nosso tempo de execução!
+
+## Resume e Conclusão
+
+
 
 
 
