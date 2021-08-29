@@ -146,12 +146,12 @@ A primeira coisa a se fazer numa DP bottom-up é inicializar a tabela da dp com 
 Bem, **os casos base da bottom up são os mesmos da top-down**! Se n = 0, então a resposta é 1, se n é menor que zero a resposta é 0. Porém, como estaremos preenchendo uma tabela, não teremos índices negativos, e para tratar isso, basta evitar que índices negativos sejam acessados durante o programa. Mas bem, vamos lá:
 
 ```cpp
-const int MOD = 1e9 + 7;
-const int MAXN = 1e6 + 7;
+const int MOD = 1e9 + 7; //necessário para o problema
+const int MAXN = 1e6 + 7; 
 int dp[MAXN];
 
-void solve() {
-  dp[0] = 1; //n = 0, resposta é 1
+void solve(int n) { //n é a soma desejada
+  dp[0] = 1; //soma = 0, resposta é 1
 }
 ```
 
@@ -159,11 +159,52 @@ E isso conclui o primeiro passo.
 
 ## Passo 2: Definir ordem de iteração dos laços (TODO)
 
+Na bottom-up estaremos percorrendo a tabela com laços de repetição, e como tem uma relação de dependência entre os subproblemas, alguns tem que ser calculados antes de outros, devemos escolher uma ordem (do menor para o maior ou do maior para o menor) para que as respostas sejam calculadas corretamente.
+
+Para definir esta ordem, **basta olharmos para as transições** da top down.
+Para calcular a resposta pro estado *n*, precisamos que as respostas pros estados *n-1*, *n-2*, ..., *n-6* já tenham sido calculadas, ou seja, precisamos que somas *menores* já tenham sido calculadas. Isso nos diz que devemos computar as respostas da menor soma para a maior! 
+
+```cpp
+const int MOD = 1e9 + 7;
+const int MAXN = 1e6 + 7;
+int dp[MAXN];
+
+void solve(int n) {
+  dp[0] = 1;
+  for (int i = 1; i <= n; ++i) { //itera da menor soma para a maior
+
+  }
+}
+```
+
+## Passo 3: Copiar as transições da top-down
+
+Sim, literalmente isso! As transições da bottom-up são as mesmas da top down, com um pequeno detalhe de que não podemos acessar índices negativos, mas isso é fácil de tratar. Assim, pegando as transições da top-down ficamos com:
+
+```cpp
+const int MOD = 1e9 + 7;
+const int MAXN = 1e6 + 7;
+int dp[MAXN];
+
+void solve(int n) {
+  dp[0] = 1;
+  for (int i = 1; i <= n; ++i) {
+    //mesmas transições da top-down
+    int ans = 0;
+    for (int i = 1; i <= 6 && n-i >= 0; ++i) { //evita acesso a índices negativos
+      ans += f(n-i);
+      ans %= MOD;
+    }
+  }
+}
+```
 
 
 
 
-/* comentários Conversão DP top-down => DP bottom up
+
+
+/* Resumo Conversão DP top-down => DP bottom up
 
 
 //1º passo - construir casos bases <=> base da recursão
