@@ -5,8 +5,6 @@
 Durante o treino no tópico de Programação Dinâmica, com o aumento do nível de dificuldade dos problemas vemos uma tendência de soluções com DP projetadas *Bottom up* ganhando mais relevância, seja por ser amigável a otimizações, ou por ter *constantes* menores. 
 Porém, para maratonistas inexperientes projetar uma DP bottom up pode não ser uma tarefa fácil ~~e as vezes nada intuitivo~~, e tendem a se agarrar à implementação top-down, o que pode desacelerar seu ritmo de aprendizado.
 
-> Para saber mais sobre as diferenças entre projetar DP de forma top-down ou bottom-up, acompanhe nosso projeto, em breve teremos um artigo tratando deste assunto!
-
 Bom, embora pensar direto numa implementação bottom up possa ser um pouco dificíl de primeira, converter uma DP top down para bottom up é fácil.
 Então temos a seguinte estratégia para implementar DP bottom up: Começar implementando top down, e depois converter de top down para bottom up.
 
@@ -14,7 +12,7 @@ Então temos a seguinte estratégia para implementar DP bottom up: Começar impl
   <img width="350" src="/images/panorama-dp.png">
 </p>
 
-O objetivo deste texto então é apresentar um passo a passo para o leitor que ainda não se sente tão confortável em projetar Programação Dinâmica bottom up diretamente, para que continuem melhorando ainda mais suas habilidades enquanto vão aprofundando seu entendimento ao resolver mais problemas e discutir com a comunidade.
+O objetivo deste texto então é apresentar um passo a passo para o leitor que ainda não se sente tão confortável em projetar Programação Dinâmica bottom up diretamente, para que continuem melhorando ainda mais suas habilidades enquanto vão aprofundando seu entendimento ao resolver mais problemas e discutindo com a comunidade.
 
 ## Tabela de Conteúdos
 
@@ -88,7 +86,7 @@ int f(int n) {
 }
 ```
 
-Porém, embora esta solução esteja correta, ela é muito **lenta**. De fato, a classe de complexidade temporal dessa solução é exponencial, em notação *Big-O* ela é `O(6^n)`. 
+Porém, embora esta solução esteja correta, ela é muito **lenta**. De fato, a classe de complexidade temporal dessa solução é exponencial, em notação *Big-O* ela é **O(6^n)**. 
 Mas, como sabemos, a lentidão dessa solução ocorre do fato de que um estado é recalculado várias e várias vezes, devido à **sobreposição de subproblemas**. Então, para melhorar nossa solução basta aplicar **memoization**:
 
 ```cpp
@@ -119,9 +117,9 @@ int f(int n) {
   return dp[n] = ans;
 }
 ```
-E aí está! Com essas duas linhas de código agora a complexidade temporal do nosso algoritmo é `O(n)`, linear!!
+E aí está! Com essas duas linhas de código agora a complexidade temporal do nosso algoritmo é **O(n)**, linear!!
 Sempre que calculamos alguma coisa guardamos essa informação em um tabela, e quando chegamos novamente em um estado previamente calculado, em vez de calcular tudo de novo só usamos a resposta guardada na tabela.
-Dessa forma garantimos que cada estado só é calculado uma vez, e que o esforço computacional pra calcular a resposta de um estado é `O(1)` (as seis iterações do laço de repetição).
+Dessa forma garantimos que cada estado só é calculado uma vez, e que o esforço computacional pra calcular a resposta de um estado é **O(1)** (as seis iterações do laço de repetição).
 
 Com essa DP já conseguiremos um *Accepted* no problema. 
 Podemos submeter (o [código](https://cses.fi/paste/db6be769a1459c102a2193/)) e ver quanto tempo nosso programa levou nos casos de teste:
@@ -259,6 +257,6 @@ Recapitulando o que fizemos, podemos resumir os passos para conversão em:
 - Passo 2: definir ordem de iteração dos laços (**basta olhar para as transições**, se a recursão vai do maior para o menor subproblema, os laços tem que iterar do menor para o maior subproblema, e vice-versa)
 - Passo 3: Copiar as transições da top-down para a bottom-up (literalmente)
 - Passo 4: Trocar chamadas recursivas por acesso direto à tabela.
-- Passo 5: Guardar a resposta calcula (igual como é feito na top-down)
+- Passo 5: Guardar a resposta calculada (igual como é feito na top-down)
 
 E com a versão bottom-up da DP você pode tentar atingir novos patamares, como aplicar otimizações de dp ~~inclusive, é possível otimizar as transições dessa DP bottom-up para calcular a resposta pra um subproblema com apenas uma operação em vez de seis, fica o desafio~~, ou implementar o algoritmo levando em consideração aspectos arquiteturais da máquina para aumentar a performance do seu programa!
