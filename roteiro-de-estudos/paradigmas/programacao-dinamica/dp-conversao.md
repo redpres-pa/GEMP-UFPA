@@ -22,6 +22,7 @@ O objetivo deste texto então é apresentar um passo a passo para o leitor que a
 - Passo 3: Copiar as transições da top down
 - Passo 4: Trocar chamadas recursivas por acessos à tabela
 - Passo 5: Guardar a resposta calculada
+- Resumo
 
 ## Passo 0: Fazer uma DP Top down
 
@@ -121,7 +122,7 @@ Sempre que calculamos alguma coisa guardamos essa informação em um tabela, e q
 Dessa forma garantimos que cada estado só é calculado uma vez, e que o esforço computacional pra calcular a resposta de um estado é `O(1)` (as seis iterações do laço de repetição).
 
 Com essa DP já conseguiremos um *Accepted* no problema. 
-Podemos submeter e ver quanto tempo nosso programa levou nos casos de teste ([código](https://cses.fi/paste/db6be769a1459c102a2193/)):
+Podemos submeter (o [código](https://cses.fi/paste/db6be769a1459c102a2193/)) e ver quanto tempo nosso programa levou nos casos de teste:
 
 <p align="center">
   <img width="350" src="/images/ac1.png"/>
@@ -129,7 +130,35 @@ Podemos submeter e ver quanto tempo nosso programa levou nos casos de teste ([c�
 
 Agora que temos uma solução top-down para o nosso problema, podemos começar a conversão para bottom-up!
 
-## Passo 1: Construir casos bases (TODO)
+## Passo 1: Construir casos base
+
+Diferentemente de uma DP top-down, onde a tabela tem um papel auxiliar apenas para guardar e olhar valores, numa DP bottom-up a tabela tem um papel central, visto que estaremos computando a resposta para cada subproblema acessando os estados previamente calculados diretamente na tabela.
+
+Como as dimensões da tabela representam os subproblemas, a tabela da bottom up vai ter a mesma dimensão da tabela utilizada na top down (pois lá você também tinha tantas dimensões quanto parâmetros para poder guardar a resposta para um subproblema.
+Nesse problema que estamos trabalhando a tabela será de uma dimensão, que abrange todos os valores possíveis da variável soma desejada, ou seja, de 0 a 1000000.
+
+```cpp
+const int MAXN = 1e6 + 7; //com um pouco de folga
+int dp[MAXN];
+```
+
+A primeira coisa a se fazer numa DP bottom-up é inicializar a tabela da dp com os casos base, ou seja, subproblemas tão triviais que a resposta é quase óbvia.
+Bem, **os casos base da bottom up são os mesmos da top-down**! Se n = 0, então a resposta é 1, se n é menor que zero a resposta é 0. Porém, como estaremos preenchendo uma tabela, não teremos índices negativos, e para tratar isso, basta evitar que índices negativos sejam acessados durante o programa. Mas bem, vamos lá:
+
+```cpp
+const int MOD = 1e9 + 7;
+const int MAXN = 1e6 + 7;
+int dp[MAXN];
+
+void solve() {
+  dp[0] = 1; //n = 0, resposta é 1
+}
+```
+
+E isso conclui o primeiro passo. 
+
+## Passo 2: Definir ordem de iteração dos laços (TODO)
+
 
 
 
