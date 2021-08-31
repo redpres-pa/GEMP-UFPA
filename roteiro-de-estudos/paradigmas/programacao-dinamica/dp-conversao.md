@@ -17,7 +17,7 @@ O objetivo deste texto então é apresentar um passo a passo para o leitor que a
 ## Tabela de Conteúdos
 
 - [Passo 0: Fazer uma DP top down](./dp-conversao.md#passo-0-fazer-uma-dp-top-down)
-- [Passo 1: Construir casos bases](./dp-conversao.md#passo-1-construir-casos-bases)
+- [Passo 1: Construir casos base](./dp-conversao.md#passo-1-construir-casos-base)
 - [Passo 2: Definir ordem de iteração dos laços](./dp-conversao.md#passo-2-definir-ordem-de-iteração-dos-laços)
 - [Passo 3: Copiar as transições da top down](./dp-conversao.md#passo-3-copiar-as-transições-da-top-down)
 - [Passo 4: Trocar chamadas recursivas por acessos à tabela](./dp-conversao.md#passo-4-trocar-chamadas-recursivas-por-acessos-à-tabela)
