@@ -39,12 +39,15 @@ Então para resolvê-lo vamos usar **análise combinatória**.
 
 Para cada lançamento do dado você pode obter resultados de 1 a 6, e como cada possibilidade representa uma *forma distinta* (ou um *evento disjunto* em combinatória) de fazer a soma *n*, pelo **princípio da adição**, a resposta de *quantas formas* há de fazer soma *n* é a soma de:
 
-- todas as formas de fazer a soma *n-1*, e tirar 1 no dado para obter soma n-1 + 1 = n.
-- todas as formas de fazer a soma *n-2*, e tirar 2 no dado para obter soma n-2 + 2 = n.
-- todas as formas de fazer a soma *n-3*, e tirar 3 no dado para obter soma n-3 + 3 = n.
-- todas as formas de fazer a soma *n-4*, e tirar 4 no dado para obter soma n-4 + 4 = n.
-- todas as formas de fazer a soma *n-5*, e tirar 5 no dado para obter soma n-5 + 5 = n.
-- todas as formas de fazer a soma *n-6*, e tirar 6 no dado para obter soma n-6 + 6 = n.
+- (Todas as formas de fazer a soma n-1) * (a única forma de tirar 1 em um lançamento) = (todas as formas de fazer a soma n a partir de n-1).
+- (Todas as formas de fazer a soma n-2) * (a única forma de tirar 2 em um lançamento) = (todas as formas de fazer a soma n a partir de n-2).
+- (Todas as formas de fazer a soma n-3) * (a única forma de tirar 3 em um lançamento) = (todas as formas de fazer a soma n a partir de n-3).
+- (Todas as formas de fazer a soma n-4) * (a única forma de tirar 4 em um lançamento) = (todas as formas de fazer a soma n a partir de n-4).
+- (Todas as formas de fazer a soma n-5) * (a única forma de tirar 5 em um lançamento) = (todas as formas de fazer a soma n a partir de n-5).
+- (Todas as formas de fazer a soma n-6) * (a única forma de tirar 6 em um lançamento) = (todas as formas de fazer a soma n a partir de n-6).
+
+> Durante um lançamento só tem uma forma de tirar 1, uma forma de tirar 2, uma forma de tirar 3, e assim por diante. 
+Então o lado esquerdo das equações acima representa o **princípio da multiplicação**, e por só ter uma forma de tirar um número de 1 a 6, demos uma ênfase em "a **única** forma [...]".
 
 Dessa forma vemos uma relação entre a resposta de quantas formas há de fazer soma *n* a partir de quantas formas há de fazer somas *n-1*, *n-2*, *n-3*, *n-4*, *n-5* e *n-6*. 
 Mais especificamente, se criarmos uma função f(n) que significa "de quantas formas podemos obter soma n lançando dados de 6 faces", temos a seguinte relação *recursiva*:
