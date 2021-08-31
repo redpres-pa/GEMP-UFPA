@@ -16,15 +16,15 @@ O objetivo deste texto então é apresentar um passo a passo para o leitor que a
 
 ## Tabela de Conteúdos
 
-- Passo 0: Fazer uma DP top down
-- Passo 1: Construir casos bases
-- Passo 2: Definir ordem de iteração dos laços
-- Passo 3: Copiar as transições da top down
-- Passo 4: Trocar chamadas recursivas por acessos à tabela
-- Passo 5: Guardar a resposta calculada
-- Resumo e Conclusão
+- [Passo 0: Fazer uma DP top down](./dp-conversao.md#passo-0-fazer-uma-dp-top-down)
+- [Passo 1: Construir casos bases](./dp-conversao.md#passo-1-construir-casos-bases)
+- [Passo 2: Definir ordem de iteração dos laços](./dp-conversao.md#passo-2-definir-ordem-de-iteração-dos-laços)
+- [Passo 3: Copiar as transições da top down](./dp-conversao.md#passo-3-copiar-as-transições-da-top-down)
+- [Passo 4: Trocar chamadas recursivas por acessos à tabela](./dp-conversao.md#passo-4-trocar-chamadas-recursivas-por-acessos-à-tabela)
+- [Passo 5: Guardar a resposta calculada](./dp-conversao.md#passo-5-guardar-a-resposta-calculada)
+- [Resumo e Conclusão](./dp-conversao.md#resumo-e-conclusão)
 
-## Passo 0: Fazer uma DP Top down
+## [Passo 0: Fazer uma DP Top down](./dp-conversao.md#tabela-de-conteúdos)
 
 Bem, se você quer converter sua solução de top down para bottom up, você precisa já ter uma solução para o problema que está tentando resolver. 
 Se você não sabe como fazer uma solução top down ainda, pode dar uma olhada na referência [1] do nosso [RoadMap](./dp-roadmap.md) de programação dinâmica ou pedir mais orientações para a comunidade. 
@@ -130,7 +130,7 @@ Podemos submeter (o [código](https://cses.fi/paste/db6be769a1459c102a2193/)) e 
 
 Agora que temos uma solução top-down para o nosso problema, podemos começar a conversão para bottom-up!
 
-## Passo 1: Construir casos base
+## [Passo 1: Construir casos base](./dp-conversao.md#tabela-de-conteúdos)
 
 Diferentemente de uma DP top-down, onde a tabela tem um papel auxiliar apenas para guardar e olhar valores, numa DP bottom-up a tabela tem um papel central, visto que estaremos computando a resposta para cada subproblema acessando os estados previamente calculados diretamente na tabela.
 
@@ -155,7 +155,7 @@ void solve(int N) { //N é a soma desejada
 }
 ```
 
-## Passo 2: Definir ordem de iteração dos laços
+## [Passo 2: Definir ordem de iteração dos laços](./dp-conversao.md#tabela-de-conteúdos)
 
 Na bottom-up estaremos percorrendo a tabela com laços de repetição, e como tem uma relação de dependência entre os subproblemas, alguns tem que ser calculados antes de outros, devemos escolher uma ordem (do menor para o maior ou do maior para o menor) para que as respostas sejam calculadas corretamente.
 
@@ -175,7 +175,7 @@ void solve(int N) {
 }
 ```
 
-## Passo 3: Copiar as transições da top-down
+## [Passo 3: Copiar as transições da top-down](./dp-conversao.md#tabela-de-conteúdos)
 
 Sim, literalmente isso! As transições da bottom-up são as mesmas da top down, com um pequeno detalhe de que não podemos acessar índices negativos, mas isso é fácil de tratar. Assim, pegando as transições da top-down ficamos com:
 
@@ -197,7 +197,7 @@ void solve(int N) {
 }
 ```
 
-## Passo 4: Trocar chamadas recursivas por acessos à tabela
+## [Passo 4: Trocar chamadas recursivas por acessos à tabela](./dp-conversao.md#tabela-de-conteúdos)
 
 Como podemos ver, tem uma chamada para nossa função *f* no meio do código. Neste passo iremos apenas trocar qualquer chamada à função por acessos diretos à tabela:
 
@@ -218,7 +218,7 @@ void solve(int N) {
 }
 ```
 
-## Passo 5: Guardar a resposta calculada
+## [Passo 5: Guardar a resposta calculada](./dp-conversao.md#tabela-de-conteúdos)
 
 Se você já calculou a resposta para um subproblema, a única coisa que falta é guardar essa resposta na tabela:
 
@@ -249,7 +249,7 @@ E aí está! Sua solução na forma bottom-up bonitinha! Ao submeter ([código](
 
 Em que nos casos de teste mais computacionalmente intensivos tivemos uma melhora de 50% no nosso tempo de execução!
 
-## Resumo e Conclusão
+## [Resumo e Conclusão](./dp-conversao.md#tabela-de-conteúdos)
 
 Recapitulando o que fizemos, podemos resumir os passos para conversão em:
 
