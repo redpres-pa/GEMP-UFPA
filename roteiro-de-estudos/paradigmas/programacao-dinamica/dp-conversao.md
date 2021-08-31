@@ -261,10 +261,11 @@ Em que nos casos de teste mais computacionalmente intensivos tivemos uma melhora
 
 Recapitulando o que fizemos, podemos resumir os passos para conversão em:
 
-- Passo 1: Construir casos bases (**são os mesmos casos base da recursão**)
+- Passo 1: Construir casos base (**são os mesmos casos base da recursão**)
 - Passo 2: Definir ordem de iteração dos laços (**basta olhar para as transições**, se a recursão vai do maior para o menor subproblema, os laços tem que iterar do menor para o maior subproblema, e vice-versa)
 - Passo 3: Copiar as transições da top-down para a bottom-up (literalmente)
 - Passo 4: Trocar chamadas recursivas por acesso direto à tabela.
 - Passo 5: Guardar a resposta calculada (igual como é feito na top-down)
 
-E com a versão bottom-up da DP você pode tentar atingir novos patamares, como aplicar otimizações de dp ~~inclusive, é possível otimizar as transições dessa DP bottom-up para calcular a resposta pra um subproblema com apenas uma operação em vez de seis, fica o desafio~~, ou implementar o algoritmo levando em consideração aspectos arquiteturais da máquina para aumentar a performance do seu programa!
+E com a versão bottom-up da DP você pode tentar atingir novos patamares, como aplicar otimizações de dp ou implementar o algoritmo levando em consideração aspectos arquiteturais da máquina para aumentar a performance do seu programa! 
+Inclusive, no problema que foi trabalhado é possível otimizar as transições dessa DP bottom-up para calcular a resposta pra um subproblema com apenas uma operação em vez de seis, fica o desafio para o leitor praticar seus conhecimentos! 
