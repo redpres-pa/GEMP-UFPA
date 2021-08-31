@@ -18,7 +18,7 @@ O objetivo deste texto então é apresentar um passo a passo para o leitor que a
 
 - Passo 0: Fazer uma DP top down
 - Passo 1: Construir casos bases
-- Passo 2: definir ordem de iteração dos laços
+- Passo 2: Definir ordem de iteração dos laços
 - Passo 3: Copiar as transições da top down
 - Passo 4: Trocar chamadas recursivas por acessos à tabela
 - Passo 5: Guardar a resposta calculada
@@ -253,8 +253,8 @@ Em que nos casos de teste mais computacionalmente intensivos tivemos uma melhora
 
 Recapitulando o que fizemos, podemos resumir os passos para conversão em:
 
-- Passo 1: construir casos bases (**são os mesmos casos base da recursão**)
-- Passo 2: definir ordem de iteração dos laços (**basta olhar para as transições**, se a recursão vai do maior para o menor subproblema, os laços tem que iterar do menor para o maior subproblema, e vice-versa)
+- Passo 1: Construir casos bases (**são os mesmos casos base da recursão**)
+- Passo 2: Definir ordem de iteração dos laços (**basta olhar para as transições**, se a recursão vai do maior para o menor subproblema, os laços tem que iterar do menor para o maior subproblema, e vice-versa)
 - Passo 3: Copiar as transições da top-down para a bottom-up (literalmente)
 - Passo 4: Trocar chamadas recursivas por acesso direto à tabela.
 - Passo 5: Guardar a resposta calculada (igual como é feito na top-down)
