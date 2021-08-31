@@ -66,8 +66,6 @@ No nosso problema são:
 
 - Se n < 0, então f(n) = 0, pois não tem como você fazer uma soma negativa, dado que fazendo zero ou mais lançamentos a soma de faces obtida é sempre não negativa.
 
-> Para saber mais sobre a opção de "não fazer nada" em combinatória leia este artigo (TODO: incluir link). 
-
 Agora podemos implementar uma função que resolve nosso problema. 
 
 ```cpp
