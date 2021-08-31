@@ -125,7 +125,7 @@ Sempre que calculamos alguma coisa guardamos essa informação em um tabela, e q
 Dessa forma garantimos que cada estado só é calculado uma vez, e que o esforço computacional pra calcular a resposta de um estado é **O(1)** (as seis iterações do laço de repetição).
 
 Com essa DP já conseguiremos um *Accepted* no problema. 
-Podemos submeter (o [código](https://cses.fi/paste/db6be769a1459c102a2193/)) e ver quanto tempo nosso programa levou nos casos de teste:
+Ao submeter o [código](https://cses.fi/paste/db6be769a1459c102a2193/), vemos que nosso programa passou nos casos de teste, e com tempo máximo de 80 milissegundos:
 
 <p align="center">
   <img width="350" src="/images/ac1.png"/>
@@ -249,13 +249,13 @@ void solve(int N) {
 }
 ```
 
-E aí está! Sua solução na forma bottom-up bonitinha! Ao submeter ([código](https://cses.fi/paste/8f78936ba784b0152a3100/)) temos o seguinte resultado:
+E aí está! Sua solução na forma bottom-up bonitinha! Ao submeter o [código](https://cses.fi/paste/8f78936ba784b0152a3100/) temos o seguinte resultado:
 
 <p align="center">
   <img width="350" src="/images/ac2.png"/>
 </p>
 
-Em que nos casos de teste mais computacionalmente intensivos tivemos uma melhora de 50% no nosso tempo de execução!
+Em que nos casos de teste mais computacionalmente intensivos tivemos uma melhora de 50% no nosso tempo de execução, caindo para 40 milissegundos!
 
 ## [Resumo e Conclusão](./dp-conversao.md#tabela-de-conteúdos)
 
