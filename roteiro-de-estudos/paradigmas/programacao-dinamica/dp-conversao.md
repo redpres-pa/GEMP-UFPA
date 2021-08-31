@@ -143,7 +143,7 @@ int dp[MAXN];
 ```
 
 A primeira coisa a se fazer numa DP bottom-up é inicializar a tabela da dp com os casos base, ou seja, subproblemas tão triviais que a resposta é quase óbvia.
-Bem, **os casos base da bottom up são os mesmos da top-down**! Se n = 0, então a resposta é 1, se n é menor que zero a resposta é 0. Porém, como estaremos preenchendo uma tabela, não teremos índices negativos, e para tratar isso, basta evitar que índices negativos sejam acessados durante o programa. Mas bem, vamos lá:
+Bem, **os casos base da bottom up são os mesmos da top-down**! Se n = 0, então a resposta é 1, se n é menor que zero a resposta é 0:
 
 ```cpp
 const int MOD = 1e9 + 7; //necessário para o problema
@@ -151,9 +151,14 @@ const int MAXN = 1e6 + 7;
 int dp[MAXN];
 
 void solve(int N) { //N é a soma desejada
-  dp[0] = 1; //soma = 0, resposta é 1
+  dp[0] = 1; //soma = 0, resposta é 1. 
+  //soma < 0 será tratada durante as transições
 }
 ```
+
+Como você pode notar, os casos para n < 0 não vão ser inicializados na tabela, pois dois motivos: o primeiro é que matrizes em C++ não tem índices negativos, e o segundo é que existem infinitos números negativos, o que não torna viável inicializar a tabela para este caso. 
+Para contornar essa situação, e explorando o fato de que nesses casos a resposta é 0, ou seja, não vai adicionar nada novo à resposta do subproblema, podemos simplesmente impedir que o programa acesse índices negativos.
+Esse tratamento é feito durante as transições, no passo 3.
 
 ## [Passo 2: Definir ordem de iteração dos laços](./dp-conversao.md#tabela-de-conteúdos)
 
