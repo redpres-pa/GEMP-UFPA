@@ -87,7 +87,7 @@ int f(int n) {
 }
 ```
 
-Porém, embora esta solução esteja correta, ela é muito **lenta**. De fato, a classe de complexidade temporal dessa solução é exponencial, em notação *Big-O* ela é **O(6^n)**. 
+Embora esta solução esteja correta, ela é muito **lenta**. De fato, a classe de complexidade temporal dessa solução é exponencial, em notação *Big-O* ela é **O(6^n)**. 
 Mas, como sabemos, a lentidão dessa solução ocorre do fato de que um estado é recalculado várias e várias vezes, devido à **sobreposição de subproblemas**. Então, para melhorar nossa solução basta aplicar **memoization**:
 
 ```cpp
@@ -135,7 +135,7 @@ Agora que temos uma solução top-down para o nosso problema, podemos começar a
 
 Diferentemente de uma DP top-down, onde a tabela tem um papel auxiliar apenas para guardar e olhar valores, numa DP bottom-up a tabela tem um papel central, visto que estaremos computando a resposta para cada subproblema acessando os estados previamente calculados diretamente na tabela.
 
-Como as dimensões da tabela representam os subproblemas, a tabela da bottom-up vai ter a mesma dimensão da tabela utilizada na top-down (pois lá você também tinha tantas dimensões quanto parâmetros para poder guardar a resposta para um subproblema.
+Como as dimensões da tabela representam os subproblemas, a tabela da bottom-up vai ter a mesma dimensão da tabela utilizada na top-down (pois lá você também tinha tantas dimensões quanto parâmetros para poder guardar a resposta para um subproblema).
 Nesse problema que estamos trabalhando a tabela será de uma dimensão, que abrange todos os valores possíveis da variável soma desejada, ou seja, de 0 a 1000000.
 
 ```cpp
@@ -157,8 +157,10 @@ void solve(int N) { //N é a soma desejada
 }
 ```
 
-Como você pode notar, os casos para n < 0 não vão ser inicializados na tabela, pois dois motivos: o primeiro é que matrizes em C++ não tem índices negativos, e o segundo é que existem infinitos números negativos, o que não torna viável inicializar a tabela para este caso. 
-Para contornar essa situação, e explorando o fato de que nesses casos a resposta é 0, ou seja, não vai adicionar nada novo à resposta do subproblema, podemos simplesmente impedir que o programa acesse índices negativos.
+Note que os casos para n < 0 não vão ser inicializados na tabela, por dois motivos:
+- Matrizes em C++ não tem índices negativos;
+- Existem infinitos números negativos, o que não tornaria viável inicializar a tabela para este caso, mesmo que houvessem índices negativos. 
+Para contornar essa situação, e explorando o fato de que nesses casos a resposta é 0, ou seja, não vai adicionar nada de novo à resposta do subproblema, podemos simplesmente impedir que o programa acesse índices negativos.
 Esse tratamento é feito durante as transições, no passo 3.
 
 ## [Passo 2: Definir ordem de iteração dos laços](./dp-conversao.md#tabela-de-conteúdos)
