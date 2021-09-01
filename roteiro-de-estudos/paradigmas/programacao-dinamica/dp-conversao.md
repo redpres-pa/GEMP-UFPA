@@ -2,32 +2,32 @@
 
 # Conversão de DP Top-down para Bottom-up
 
-Durante o treino no tópico de Programação Dinâmica, com o aumento do nível de dificuldade dos problemas vemos uma tendência de soluções com DP projetadas *Bottom up* ganhando mais relevância, seja por ser amigável a otimizações, ou por ter *constantes* menores. 
-Porém, para maratonistas inexperientes projetar uma DP bottom up pode não ser uma tarefa fácil ~~e as vezes nada intuitivo~~, e tendem a se agarrar à implementação top-down, o que pode desacelerar seu ritmo de aprendizado.
+Durante o treino no tópico de Programação Dinâmica, com o aumento do nível de dificuldade dos problemas vemos uma tendência de soluções com DP projetadas *bottom-up* ganhando mais relevância, seja por ser amigável a otimizações, ou por ter *constantes* menores. 
+Porém, para maratonistas inexperientes projetar uma DP bottom-up pode não ser uma tarefa fácil ~~e as vezes nada intuitivo~~, e tendem a se agarrar à implementação top-down, o que pode desacelerar seu ritmo de aprendizado.
 
-Bom, embora pensar direto numa implementação bottom up possa ser um pouco dificíl de primeira, converter uma DP top down para bottom up é fácil.
-Então temos a seguinte estratégia para implementar DP bottom up: Começar implementando top down, e depois converter de top down para bottom up.
+Embora pensar direto numa implementação bottom-up possa ser um pouco dificíl de primeira, converter uma DP top-down para bottom-up é fácil.
+Então temos a seguinte estratégia para implementar DP bottom-up: Começar implementando top-down, e depois converter de top-down para bottom-up.
 
 <p align="center">
-  <img width="350" src="/images/panorama-dp.png">
+  <img width="350" src="./img/panorama-dp.png">
 </p>
 
-O objetivo deste texto então é apresentar um passo a passo para o leitor que ainda não se sente tão confortável em projetar Programação Dinâmica bottom up diretamente, para que continuem melhorando ainda mais suas habilidades enquanto vão aprofundando seu entendimento ao resolver mais problemas e discutindo com a comunidade.
+O objetivo deste texto é, então, apresentar um passo a passo para o leitor que ainda não se sente tão confortável em projetar Programação Dinâmica bottom-up diretamente, para que continuem desenvolvendo suas habilidades enquanto aperfeiçoam seu entendimento ao resolver mais problemas e ao discutir com a comunidade.
 
 ## Tabela de Conteúdos
 
-- [Passo 0: Fazer uma DP top down](./dp-conversao.md#passo-0-fazer-uma-dp-top-down)
+- [Passo 0: Fazer uma DP top-down](./dp-conversao.md#passo-0-fazer-uma-dp-top-down)
 - [Passo 1: Construir casos base](./dp-conversao.md#passo-1-construir-casos-base)
 - [Passo 2: Definir ordem de iteração dos laços](./dp-conversao.md#passo-2-definir-ordem-de-iteração-dos-laços)
-- [Passo 3: Copiar as transições da top down](./dp-conversao.md#passo-3-copiar-as-transições-da-top-down)
+- [Passo 3: Copiar as transições da top-down](./dp-conversao.md#passo-3-copiar-as-transições-da-top-down)
 - [Passo 4: Trocar chamadas recursivas por acessos à tabela](./dp-conversao.md#passo-4-trocar-chamadas-recursivas-por-acessos-à-tabela)
 - [Passo 5: Guardar a resposta calculada](./dp-conversao.md#passo-5-guardar-a-resposta-calculada)
 - [Resumo e Conclusão](./dp-conversao.md#resumo-e-conclusão)
 
-## [Passo 0: Fazer uma DP Top down](./dp-conversao.md#tabela-de-conteúdos)
+## [Passo 0: Fazer uma DP top-down](./dp-conversao.md#tabela-de-conteúdos)
 
-Bem, se você quer converter sua solução de top down para bottom up, você precisa já ter uma solução para o problema que está tentando resolver. 
-Se você não sabe como fazer uma solução top down ainda, pode dar uma olhada na referência [1] do nosso [RoadMap](./dp-roadmap.md) de programação dinâmica ou pedir mais orientações para a comunidade. 
+Bem, se você quer converter sua solução de top-down para bottom-up, você precisa já ter uma solução para o problema que está tentando resolver. 
+Se você não sabe como fazer uma solução top-down ainda, pode dar uma olhada na referência [1] do nosso [RoadMap](./dp-roadmap.md) de programação dinâmica ou pedir mais orientações para a comunidade. 
 A partir daqui assumiremos que o leitor conhece os conceitos de programação dinâmica.
 
 Para que este passo a passo faça mais sentido, iremos trabalhar um exemplo ao longo da discussão. Iremos resolver o problema [Dice Combinatinons](https://cses.fi/problemset/task/1633) do online judge [CSES](https://cses.fi/problemset/).
@@ -46,7 +46,7 @@ Para cada lançamento do dado você pode obter resultados de 1 a 6, e como cada 
 - (Todas as formas de fazer a soma n-5) * (a única forma de tirar 5 em um lançamento) = (todas as formas de fazer a soma n a partir de n-5).
 - (Todas as formas de fazer a soma n-6) * (a única forma de tirar 6 em um lançamento) = (todas as formas de fazer a soma n a partir de n-6).
 
-> Durante um lançamento só tem uma forma de tirar 1, uma forma de tirar 2, uma forma de tirar 3, e assim por diante. 
+> Com apenas um lançamento só tem uma forma de tirar 1, uma forma de tirar 2, uma forma de tirar 3, e assim por diante. 
 Então o lado esquerdo das equações acima representa o **princípio da multiplicação**, e por só ter uma forma de tirar um número de 1 a 6, demos uma ênfase em "a **única** forma [...]".
 
 Dessa forma vemos uma relação entre a resposta de quantas formas há de fazer soma *n* a partir de quantas formas há de fazer somas *n-1*, *n-2*, *n-3*, *n-4*, *n-5* e *n-6*. 
@@ -59,7 +59,7 @@ f(n) = f(n-1) + f(n-2) + f(n-3) + f(n-4) + f(n-5) + f(n-6)
 > Esse é um bom momento para observar que o problema que queremos resolver tem a propriedade de **subestrutura ótima**, dado que a resposta para o nosso problema depende da resposta de subproblemas mais simples.
 
 Para completar nossa solução, precisamos agora definir os casos base dessa recursão. 
-Casos base são aqueles subproblemas que são tão triviais que a resposta é quase óbvia, e você nem precisa pensar muito pra responder. 
+Casos base são aqueles subproblemas que são tão triviais que a resposta é quase óbvia, e você nem precisa pensar muito para responder ~~na maioria das vezes~~. 
 No nosso problema são:
 
 - Se n = 0, então f(n) = 1, pois só tem uma forma de fazer soma 0, que é **não fazer nada**. Se você quer fazer uma soma 0, então você não vai fazer nenhum lançamento, pois já tem a soma desejada, e essa **é uma forma válida de contar em combinatória**.
@@ -126,7 +126,7 @@ Com essa DP já conseguiremos um *Accepted* no problema.
 Ao submeter o [código](https://cses.fi/paste/db6be769a1459c102a2193/), vemos que nosso programa passou nos casos de teste, e com tempo máximo de 80 milissegundos:
 
 <p align="center">
-  <img width="350" src="/images/ac1.png"/>
+  <img width="350" src="./img/ac1.png"/>
 </p>
 
 Agora que temos uma solução top-down para o nosso problema, podemos começar a conversão para bottom-up!
@@ -135,7 +135,7 @@ Agora que temos uma solução top-down para o nosso problema, podemos começar a
 
 Diferentemente de uma DP top-down, onde a tabela tem um papel auxiliar apenas para guardar e olhar valores, numa DP bottom-up a tabela tem um papel central, visto que estaremos computando a resposta para cada subproblema acessando os estados previamente calculados diretamente na tabela.
 
-Como as dimensões da tabela representam os subproblemas, a tabela da bottom up vai ter a mesma dimensão da tabela utilizada na top down (pois lá você também tinha tantas dimensões quanto parâmetros para poder guardar a resposta para um subproblema.
+Como as dimensões da tabela representam os subproblemas, a tabela da bottom-up vai ter a mesma dimensão da tabela utilizada na top-down (pois lá você também tinha tantas dimensões quanto parâmetros para poder guardar a resposta para um subproblema.
 Nesse problema que estamos trabalhando a tabela será de uma dimensão, que abrange todos os valores possíveis da variável soma desejada, ou seja, de 0 a 1000000.
 
 ```cpp
@@ -143,8 +143,8 @@ const int MAXN = 1e6 + 7; //com um pouco de folga
 int dp[MAXN];
 ```
 
-A primeira coisa a se fazer numa DP bottom-up é inicializar a tabela da dp com os casos base, ou seja, subproblemas tão triviais que a resposta é quase óbvia.
-Bem, **os casos base da bottom up são os mesmos da top-down**! Se n = 0, então a resposta é 1, se n é menor que zero a resposta é 0:
+A primeira coisa a se fazer numa DP bottom-up é inicializar a tabela da DP com os casos base, ou seja, subproblemas tão triviais que a resposta é quase óbvia.
+Bem, **os casos base da bottom-up são os mesmos da top-down**! Se n = 0, então a resposta é 1, se n é menor que zero a resposta é 0:
 
 ```cpp
 const int MOD = 1e9 + 7; //necessário para o problema
@@ -165,7 +165,7 @@ Esse tratamento é feito durante as transições, no passo 3.
 
 Na bottom-up estaremos percorrendo a tabela com laços de repetição, e como tem uma relação de dependência entre os subproblemas, alguns tem que ser calculados antes de outros, devemos escolher uma ordem (do menor para o maior ou do maior para o menor) para que as respostas sejam calculadas corretamente.
 
-Para definir esta ordem, **basta olharmos para as transições** da top down.
+Para definir esta ordem, **basta olharmos para as transições** da top-down.
 Para calcular a resposta pro estado *n*, precisamos que as respostas pros estados *n-1*, *n-2*, ..., *n-6* já tenham sido calculadas, ou seja, precisamos que somas *menores* já tenham sido calculadas. Isso nos diz que devemos computar as respostas da menor soma para a maior! Logo:
 
 ```cpp
@@ -183,7 +183,7 @@ void solve(int N) {
 
 ## [Passo 3: Copiar as transições da top-down](./dp-conversao.md#tabela-de-conteúdos)
 
-Sim, literalmente isso! As transições da bottom-up são as mesmas da top down, com um pequeno detalhe de que não podemos acessar índices negativos, mas isso é fácil de tratar. Assim, pegando as transições da top-down ficamos com:
+Sim, literalmente isso! As transições da bottom-up são as mesmas da top-down, com um pequeno detalhe de que não podemos acessar índices negativos, mas isso é fácil de tratar. Assim, pegando as transições da top-down ficamos com:
 
 ```cpp
 const int MOD = 1e9 + 7;
@@ -250,10 +250,10 @@ void solve(int N) {
 E aí está! Sua solução na forma bottom-up bonitinha! Ao submeter o [código](https://cses.fi/paste/8f78936ba784b0152a3100/) temos o seguinte resultado:
 
 <p align="center">
-  <img width="350" src="/images/ac2.png"/>
+  <img width="350" src="./img/ac2.png"/>
 </p>
 
-Em que nos casos de teste mais computacionalmente intensivos tivemos uma melhora de 50% no nosso tempo de execução, caindo para 40 milissegundos!
+Nos casos de teste mais computacionalmente intensivos tivemos uma melhora de 50% no nosso tempo de execução, caindo para 40 milissegundos!
 
 ## [Resumo e Conclusão](./dp-conversao.md#tabela-de-conteúdos)
 
@@ -263,7 +263,7 @@ Recapitulando o que fizemos, podemos resumir os passos para conversão em:
 - Passo 2: Definir ordem de iteração dos laços (**basta olhar para as transições**, se a recursão vai do maior para o menor subproblema, os laços tem que iterar do menor para o maior subproblema, e vice-versa)
 - Passo 3: Copiar as transições da top-down para a bottom-up (literalmente)
 - Passo 4: Trocar chamadas recursivas por acesso direto à tabela.
-- Passo 5: Guardar a resposta calculada (igual como é feito na top-down)
+- Passo 5: Guardar a resposta calculada (como é feito na top-down)
 
-E com a versão bottom-up da DP você pode tentar atingir novos patamares, como aplicar otimizações de dp ou implementar o algoritmo levando em consideração aspectos arquiteturais da máquina para aumentar a performance do seu programa! 
+E com a versão bottom-up da DP você pode tentar atingir novos patamares, como aplicar otimizações de DP ou implementar o algoritmo levando em consideração aspectos arquiteturais da máquina para aumentar a performance do seu programa! 
 Inclusive, no problema que foi trabalhado é possível otimizar as transições dessa DP bottom-up para calcular a resposta pra um subproblema com apenas uma operação em vez de seis, fica o desafio para o leitor praticar seus conhecimentos! 
