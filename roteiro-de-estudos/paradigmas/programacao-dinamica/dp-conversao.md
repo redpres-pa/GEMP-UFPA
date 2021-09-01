@@ -144,7 +144,7 @@ int dp[MAXN];
 ```
 
 A primeira coisa a se fazer numa DP bottom-up é inicializar a tabela da DP com os casos base, ou seja, subproblemas tão triviais que a resposta é quase óbvia.
-Bem, **os casos base da bottom-up são os mesmos da top-down**! Se n = 0, então a resposta é 1, se n é menor que zero a resposta é 0:
+Bem, **os casos base da bottom-up são os mesmos da top-down**! Se n = 0, então a resposta é 1, se n < 0 a resposta é 0:
 
 ```cpp
 const int MOD = 1e9 + 7; //necessário para o problema
@@ -152,7 +152,7 @@ const int MAXN = 1e6 + 7;
 int dp[MAXN];
 
 void solve(int N) { //N é a soma desejada
-  dp[0] = 1; //soma = 0, resposta é 1. 
+  dp[0] = 1; //soma = 0, resposta é 1. Inicializada direto na tabela 
   //soma < 0 será tratada durante as transições
 }
 ```
