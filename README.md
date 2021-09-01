@@ -5,7 +5,11 @@
 
 Grupo de estudos para programação competitiva, visando principalmente a [OBI](https://olimpiada.ic.unicamp.br/) e a [Maratona de Programação](http://maratona.sbc.org.br/). Nosso objetivo é desenvolver a cultura, e criar uma comunidade, de Programação Competitiva na UFPA.
 
-## Apresentação
+## Tabela de Conteúdos
+0. [Apresentação](/README.md#apresentação)
+1. [Membros](/README.md#membros)
+
+## [Apresentação](/README.md#tabela-de-conteúdos)
 
 **Nossos objetivos** como grupo são desenvolver a cultura de Programação Competitiva na UFPA e criar uma comunidade na mesma. Além de ser bastante divertido resolver problemas, participar dessas competições acadêmicas nos motiva a continuar aprendendo e desenvolvendo habilidades que serão importantes se quisermos ser bons profissionais, e também, traz mais visibilidade tanto para a UFPA quanto para o Pará no cenário nacional em computação. Porém, há certas limitações para o que indivíduos isolados podem fazer, principalmente quando estes não tem o ambiente ideal para se dedicar somente aos estudos.
 
@@ -41,7 +45,7 @@ Estamos o tempo inteiro discutindo tópicos com o grupo para **acelerar nosso ap
 
 Também incentivamos um **ritmo saudável de estudo**, além de dar suporte levando em conta as especificidades de cada pessoa. Por isso, nosso foco é **menos na quantidade e mais na qualidade** desse treino. Acreditamos que praticar de forma **consistente** e com os **melhores materiais disponíveis** vale mais do que horas a fio pelas madrugadas.
 
-## Membros
+## [Membros](/README.md#tabela-de-conteúdos)
 Membros Coordenadores são os membros que estão planejando e executando novas atividades do grupo.
 
 Membros Egressos são os membros que já passaram pelo grupo, mas que já não estão tão ativos.
