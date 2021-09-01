@@ -3,9 +3,9 @@
 # Conversão de DP Top-down para Bottom-up
 
 Durante o treino no tópico de Programação Dinâmica, com o aumento do nível de dificuldade dos problemas vemos uma tendência de soluções com DP projetadas *bottom-up* ganhando mais relevância, seja por ser amigável a otimizações, ou por ter *constantes* menores. 
-Porém, para maratonistas inexperientes projetar uma DP bottom-up pode não ser uma tarefa fácil ~~e as vezes nada intuitivo~~, e tendem a se agarrar à implementação top-down, o que pode desacelerar seu ritmo de aprendizado.
+Porém, para maratonistas inexperientes projetar uma DP bottom-up pode não ser uma tarefa fácil ~~e as vezes nada intuitiva~~, e tendem a se agarrar à implementação top-down, o que pode desacelerar seu ritmo de aprendizado.
 
-Embora pensar direto numa implementação bottom-up possa ser um pouco dificíl de primeira, converter uma DP top-down para bottom-up é fácil.
+Embora pensar direto numa implementação bottom-up possa ser um pouco difícil de primeira, converter uma DP top-down para bottom-up é fácil.
 Então temos a seguinte estratégia para implementar DP bottom-up: Começar implementando top-down, e depois converter de top-down para bottom-up.
 
 <p align="center">
@@ -27,7 +27,7 @@ O objetivo deste texto é, então, apresentar um passo a passo para o leitor que
 ## [Passo 0: Fazer uma DP top-down](./dp-conversao.md#tabela-de-conteúdos)
 
 Bem, se você quer converter sua solução de top-down para bottom-up, você precisa já ter uma solução para o problema que está tentando resolver. 
-Se você não sabe como fazer uma solução top-down ainda, pode dar uma olhada na referência [1] do nosso [RoadMap](./README.md) de programação dinâmica ou pedir mais orientações para a comunidade. 
+Se você não sabe como fazer uma solução top-down ainda, pode dar uma olhada na referência [1] do nosso [RoadMap](/roteiro-de-estudos/README.md) de programação dinâmica ou pedir mais orientações para a comunidade. 
 A partir daqui assumiremos que o leitor conhece os conceitos de programação dinâmica.
 
 Para que este passo a passo faça mais sentido, iremos trabalhar um exemplo ao longo da discussão. Iremos resolver o problema [Dice Combinatinons](https://cses.fi/problemset/task/1633) do online judge [CSES](https://cses.fi/problemset/).
