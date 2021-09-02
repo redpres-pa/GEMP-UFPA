@@ -16,15 +16,15 @@ O objetivo deste texto é, então, apresentar um passo a passo para o leitor que
 
 ## Tabela de Conteúdos
 
-- [Passo 0: Fazer uma DP top-down](./dp-conversao.md#passo-0-fazer-uma-dp-top-down)
-- [Passo 1: Construir casos base](./dp-conversao.md#passo-1-construir-casos-base)
-- [Passo 2: Definir ordem de iteração dos laços](./dp-conversao.md#passo-2-definir-ordem-de-iteração-dos-laços)
-- [Passo 3: Copiar as transições da top-down](./dp-conversao.md#passo-3-copiar-as-transições-da-top-down)
-- [Passo 4: Trocar chamadas recursivas por acessos à tabela](./dp-conversao.md#passo-4-trocar-chamadas-recursivas-por-acessos-à-tabela)
-- [Passo 5: Guardar a resposta calculada](./dp-conversao.md#passo-5-guardar-a-resposta-calculada)
-- [Resumo e Conclusão](./dp-conversao.md#resumo-e-conclusão)
+- [Passo 0: Fazer uma DP top-down](#passo-0-fazer-uma-dp-top-down)
+- [Passo 1: Construir casos base](#passo-1-construir-casos-base)
+- [Passo 2: Definir ordem de iteração dos laços](#passo-2-definir-ordem-de-iteração-dos-laços)
+- [Passo 3: Copiar as transições da top-down](#passo-3-copiar-as-transições-da-top-down)
+- [Passo 4: Trocar chamadas recursivas por acessos à tabela](#passo-4-trocar-chamadas-recursivas-por-acessos-à-tabela)
+- [Passo 5: Guardar a resposta calculada](#passo-5-guardar-a-resposta-calculada)
+- [Resumo e Conclusão](#resumo-e-conclusão)
 
-## [Passo 0: Fazer uma DP top-down](./dp-conversao.md#tabela-de-conteúdos)
+## [Passo 0: Fazer uma DP top-down](#tabela-de-conteúdos)
 
 Bem, se você quer converter sua solução de top-down para bottom-up, você precisa já ter uma solução para o problema que está tentando resolver. 
 Se você não sabe como fazer uma solução top-down ainda, pode dar uma olhada na referência [1] do nosso [RoadMap](./README.md) de programação dinâmica ou pedir mais orientações para a comunidade. 
@@ -131,7 +131,7 @@ Ao submeter o [código](https://cses.fi/paste/db6be769a1459c102a2193/), vemos qu
 
 Agora que temos uma solução top-down para o nosso problema, podemos começar a conversão para bottom-up!
 
-## [Passo 1: Construir casos base](./dp-conversao.md#tabela-de-conteúdos)
+## [Passo 1: Construir casos base](#tabela-de-conteúdos)
 
 Diferentemente de uma DP top-down, onde a tabela tem um papel auxiliar apenas para guardar e olhar valores, numa DP bottom-up a tabela tem um papel central, visto que estaremos computando a resposta para cada subproblema acessando os estados previamente calculados diretamente na tabela.
 
@@ -163,7 +163,7 @@ Note que os casos para n < 0 não vão ser inicializados na tabela, por dois mot
 Para contornar essa situação, e explorando o fato de que nesses casos a resposta é 0, ou seja, não vai adicionar nada de novo à resposta do subproblema, podemos simplesmente impedir que o programa acesse índices negativos.
 Esse tratamento é feito durante as transições, no passo 3.
 
-## [Passo 2: Definir ordem de iteração dos laços](./dp-conversao.md#tabela-de-conteúdos)
+## [Passo 2: Definir ordem de iteração dos laços](#tabela-de-conteúdos)
 
 Na bottom-up estaremos percorrendo a tabela com laços de repetição, e como tem uma relação de dependência entre os subproblemas, alguns tem que ser calculados antes de outros, devemos escolher uma ordem (do menor para o maior ou do maior para o menor) para que as respostas sejam calculadas corretamente.
 
@@ -183,7 +183,7 @@ void solve(int N) {
 }
 ```
 
-## [Passo 3: Copiar as transições da top-down](./dp-conversao.md#tabela-de-conteúdos)
+## [Passo 3: Copiar as transições da top-down](#tabela-de-conteúdos)
 
 Sim, literalmente isso! As transições da bottom-up são as mesmas da top-down, com um pequeno detalhe de que não podemos acessar índices negativos, mas isso é fácil de tratar. Assim, pegando as transições da top-down ficamos com:
 
@@ -205,7 +205,7 @@ void solve(int N) {
 }
 ```
 
-## [Passo 4: Trocar chamadas recursivas por acessos à tabela](./dp-conversao.md#tabela-de-conteúdos)
+## [Passo 4: Trocar chamadas recursivas por acessos à tabela](#tabela-de-conteúdos)
 
 Como podemos ver, tem uma chamada para nossa função *f* no meio do código. Neste passo iremos apenas trocar qualquer chamada à função por acessos diretos à tabela:
 
@@ -226,7 +226,7 @@ void solve(int N) {
 }
 ```
 
-## [Passo 5: Guardar a resposta calculada](./dp-conversao.md#tabela-de-conteúdos)
+## [Passo 5: Guardar a resposta calculada](#tabela-de-conteúdos)
 
 Se você já calculou a resposta para um subproblema, a única coisa que falta é guardar essa resposta na tabela:
 
@@ -257,7 +257,7 @@ E aí está! Sua solução na forma bottom-up bonitinha! Ao submeter o [código]
 
 Nos casos de teste mais computacionalmente intensivos tivemos uma melhora de 50% no nosso tempo de execução, caindo para 40 milissegundos!
 
-## [Resumo e Conclusão](./dp-conversao.md#tabela-de-conteúdos)
+## [Resumo e Conclusão](#tabela-de-conteúdos)
 
 Recapitulando o que fizemos, podemos resumir os passos para conversão em:
 
