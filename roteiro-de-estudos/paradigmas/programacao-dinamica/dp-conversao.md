@@ -27,7 +27,7 @@ O objetivo deste texto é, então, apresentar um passo a passo para o leitor que
 ## [Passo 0: Fazer uma DP top-down](#tabela-de-conteúdos)
 
 Bem, se você quer converter sua solução de top-down para bottom-up, você precisa já ter uma solução para o problema que está tentando resolver. 
-Se você não sabe como fazer uma solução top-down ainda, pode dar uma olhada na referência [1] do nosso [RoadMap](./README.md) de programação dinâmica ou pedir mais orientações para a comunidade. 
+Se você não sabe como fazer uma solução top-down ainda, pode dar uma olhada na referência [[1]](./dp-conversao.md#L275) do nosso [RoadMap](./README.md) de programação dinâmica ou pedir mais orientações para a comunidade. 
 A partir daqui assumiremos que o leitor conhece os conceitos de programação dinâmica.
 
 Para que este passo a passo faça mais sentido, iremos trabalhar um exemplo ao longo da discussão. Iremos resolver o problema [Dice Combinatinons](https://cses.fi/problemset/task/1633) do online judge [CSES](https://cses.fi/problemset/).
@@ -37,7 +37,7 @@ O enunciado do problema pede para acharmos de quantas formas podemos fazer uma s
 Ao pedir "**de quantas formas** podemos fazer uma soma" podemos identificar uma natureza combinatória neste problema, visto que queremos *contar* esses jeitos de fazer a soma. 
 Então para resolvê-lo vamos usar **análise combinatória**. 
 
-Para cada lançamento do dado você pode obter resultados de 1 a 6, e como cada possibilidade representa uma *forma distinta* (ou um *evento disjunto* em combinatória) de fazer a soma *n*, pelo **princípio da adição**, a resposta de *quantas formas* há de fazer soma *n* é a soma de:
+Para cada lançamento do dado você pode obter resultados de 1 a 6, e como cada possibilidade representa uma *forma distinta* (ou um *evento disjunto* em combinatória) de fazer a soma *n*, pelo **princípio da adição** [1], a resposta de *quantas formas* há de fazer soma *n* é a soma de:
 
 - (Todas as formas de fazer a soma n-1) * (a única forma de tirar 1 em um lançamento) = (todas as formas de fazer a soma n a partir de n-1).
 - (Todas as formas de fazer a soma n-2) * (a única forma de tirar 2 em um lançamento) = (todas as formas de fazer a soma n a partir de n-2).
@@ -47,7 +47,7 @@ Para cada lançamento do dado você pode obter resultados de 1 a 6, e como cada 
 - (Todas as formas de fazer a soma n-6) * (a única forma de tirar 6 em um lançamento) = (todas as formas de fazer a soma n a partir de n-6).
 
 > Com apenas um lançamento só tem uma forma de tirar 1, uma forma de tirar 2, uma forma de tirar 3, e assim por diante. 
-Então o lado esquerdo das equações acima representa o **princípio da multiplicação**, e por só ter uma forma de tirar um número de 1 a 6, demos uma ênfase em "a **única** forma [...]".
+Então o lado esquerdo das equações acima representa o **princípio da multiplicação** [[1]](./dp-conversao.md#L275), e por só ter uma forma de tirar um número de 1 a 6, demos uma ênfase em "a **única** forma [...]".
 
 Dessa forma vemos uma relação entre a resposta de quantas formas há de fazer soma *n* a partir de quantas formas há de fazer somas *n-1*, *n-2*, *n-3*, *n-4*, *n-5* e *n-6*. 
 Mais especificamente, se criarmos uma função f(n) que significa "de quantas formas podemos obter soma n lançando dados de 6 faces", temos a seguinte relação *recursiva*:
@@ -269,3 +269,7 @@ Recapitulando o que fizemos, podemos resumir os passos para conversão em:
 
 E com a versão bottom-up da DP você pode tentar atingir novos patamares, como aplicar otimizações de DP ou implementar o algoritmo levando em consideração aspectos arquiteturais da máquina para aumentar a performance do seu programa! 
 Inclusive, no problema que foi trabalhado é possível otimizar as transições dessa DP bottom-up para calcular a resposta pra um subproblema com apenas uma operação em vez de seis, fica o desafio para o leitor praticar seus conhecimentos! 
+
+## Referências
+
+[1] [Princípios Aditivo e Multiplicativo da Análise Combinatória](http://matematica-na-veia.blogspot.com/2009/07/analise-combinatoria-principio-aditivo.html)
