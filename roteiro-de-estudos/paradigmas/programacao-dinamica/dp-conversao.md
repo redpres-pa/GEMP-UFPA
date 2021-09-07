@@ -27,7 +27,7 @@ O objetivo deste texto é, então, apresentar um passo a passo para o leitor que
 ## [Passo 0: Fazer uma DP top-down](#tabela-de-conteúdos)
 
 Bem, se você quer converter sua solução de top-down para bottom-up, você precisa já ter uma solução para o problema que está tentando resolver. 
-Se você não sabe como fazer uma solução top-down ainda, pode dar uma olhada na referência [[1]](./dp-conversao.md#L275) do nosso [RoadMap](./README.md) de programação dinâmica ou pedir mais orientações para a comunidade. 
+Se você não sabe como fazer uma solução top-down ainda, pode dar uma olhada na referência [[1]](https://github.com/Rockett12/GEMP-UFPA/blob/issue-35/roteiro-de-estudos/paradigmas/programacao-dinamica/dp-conversao.md#refer%C3%AAncias) do nosso [RoadMap](./README.md) de programação dinâmica ou pedir mais orientações para a comunidade. 
 A partir daqui assumiremos que o leitor conhece os conceitos de programação dinâmica.
 
 Para que este passo a passo faça mais sentido, iremos trabalhar um exemplo ao longo da discussão. Iremos resolver o problema [Dice Combinatinons](https://cses.fi/problemset/task/1633) do online judge [CSES](https://cses.fi/problemset/).
@@ -47,7 +47,7 @@ Para cada lançamento do dado você pode obter resultados de 1 a 6, e como cada 
 - (Todas as formas de fazer a soma n-6) * (a única forma de tirar 6 em um lançamento) = (todas as formas de fazer a soma n a partir de n-6).
 
 > Com apenas um lançamento só tem uma forma de tirar 1, uma forma de tirar 2, uma forma de tirar 3, e assim por diante. 
-Então o lado esquerdo das equações acima representa o **princípio da multiplicação** [[1]](./dp-conversao.md#L275), e por só ter uma forma de tirar um número de 1 a 6, demos uma ênfase em "a **única** forma [...]".
+Então o lado esquerdo das equações acima representa o **princípio da multiplicação** [[1]](https://github.com/Rockett12/GEMP-UFPA/blob/issue-35/roteiro-de-estudos/paradigmas/programacao-dinamica/dp-conversao.md#refer%C3%AAncias), e por só ter uma forma de tirar um número de 1 a 6, demos uma ênfase em "a **única** forma [...]".
 
 Dessa forma vemos uma relação entre a resposta de quantas formas há de fazer soma *n* a partir de quantas formas há de fazer somas *n-1*, *n-2*, *n-3*, *n-4*, *n-5* e *n-6*. 
 Mais especificamente, se criarmos uma função f(n) que significa "de quantas formas podemos obter soma n lançando dados de 6 faces", temos a seguinte relação *recursiva*:
