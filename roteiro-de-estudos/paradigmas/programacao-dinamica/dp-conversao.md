@@ -27,7 +27,7 @@ O objetivo deste texto é, então, apresentar um passo a passo para o leitor que
 ## [Passo 0: Fazer uma DP top-down](#tabela-de-conteúdos)
 
 Bem, se você quer converter sua solução de top-down para bottom-up, você precisa já ter uma solução para o problema que está tentando resolver. 
-Se você não sabe como fazer uma solução top-down ainda, pode dar uma olhada na referência [[1]](./dp-conversao.md#referências) do nosso [RoadMap](./README.md) de programação dinâmica ou pedir mais orientações para a comunidade. 
+Se você não sabe como fazer uma solução top-down ainda, pode dar uma olhada na referência [1] do nosso [RoadMap](./README.md) de programação dinâmica ou pedir mais orientações para a comunidade. 
 A partir daqui assumiremos que o leitor conhece os conceitos de programação dinâmica.
 
 Para que este passo a passo faça mais sentido, iremos trabalhar um exemplo ao longo da discussão. Iremos resolver o problema [Dice Combinatinons](https://cses.fi/problemset/task/1633) do online judge [CSES](https://cses.fi/problemset/).
@@ -37,7 +37,7 @@ O enunciado do problema pede para acharmos de quantas formas podemos fazer uma s
 Ao pedir "**de quantas formas** podemos fazer uma soma" podemos identificar uma natureza combinatória neste problema, visto que queremos *contar* esses jeitos de fazer a soma. 
 Então para resolvê-lo vamos usar **análise combinatória**. 
 
-Para cada lançamento do dado você pode obter resultados de 1 a 6, e como cada possibilidade representa uma *forma distinta* (ou um *evento disjunto* em combinatória) de fazer a soma *n*, pelo **princípio da adição** [1], a resposta de *quantas formas* há de fazer soma *n* é a soma de:
+Para cada lançamento do dado você pode obter resultados de 1 a 6, e como cada possibilidade representa uma *forma distinta* (ou um *evento disjunto* em combinatória) de fazer a soma *n*, pelo **princípio da adição** [[1]](./dp-conversao.md#referências), a resposta de *quantas formas* há de fazer soma *n* é a soma de:
 
 - (Todas as formas de fazer a soma n-1) * (a única forma de tirar 1 em um lançamento) = (todas as formas de fazer a soma n a partir de n-1).
 - (Todas as formas de fazer a soma n-2) * (a única forma de tirar 2 em um lançamento) = (todas as formas de fazer a soma n a partir de n-2).
