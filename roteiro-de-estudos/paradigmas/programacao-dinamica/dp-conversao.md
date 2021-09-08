@@ -272,6 +272,6 @@ Inclusive, no problema que foi trabalhado é possível otimizar as transições 
 
 ## Referências
 
-[1] [Princípios Aditivo e Multiplicativo da Análise Combinatória](http://matematica-na-veia.blogspot.com/2009/07/analise-combinatoria-principio-aditivo.html)
+[1] [Princípios Aditivo e Multiplicativo da Análise Combinatória - Matemática na Veia](http://matematica-na-veia.blogspot.com/2009/07/analise-combinatoria-principio-aditivo.html)
 
 [2] [Seções 1.1 e 1.3 do capítulo 1 de Métodos de Contagem por Luiz Rodrigo D'Andrada Bezerra](https://repositorio.ufpb.br/jspui/bitstream/tede/7524/2/arquivototal.pdf)
