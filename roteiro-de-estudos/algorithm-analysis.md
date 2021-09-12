@@ -26,7 +26,7 @@ A seguir, é possível propor o seguinte problema para elucidar os tipos de par�
 
 > Para um array de tamanho **n**, identifique o maior elemento contido dentro do array.
 
-Uma solução em C++ para o problema pode ser a seguinte:
+Um algoritmo que resolve o problema em C++ pode ser o seguinte:
 
 ```cpp
 #include <iostream> 
@@ -35,14 +35,16 @@ using namespace std;
 
 int main(){
   int n;
-  int vetor[1000];
-  int valor_maximo;
 
   cin>>n;
-  
+
+  int vetor[n];
+
   for(int i = 0; i<n; i++){
     cin>>vetor[i];
   }
+
+  int valor_maximo;
 
   for(int i = 0; i<n; i++){
     if(i == 0){
@@ -121,13 +123,13 @@ De maneira análoga, podemos reescrever o programa da seguinte forma para uma en
 }
 ```
 
-Ao comparar a quantidade de operações realizadas para os dois tipos de entradas diferentes, temos a resposta óbvia de que para um valor de entrada maior, o código em questão realiza uma quantidade maior de operações, e vice-versa.
+Ao comparar a quantidade de operações realizadas para os dois tipos de entradas diferentes, temos a conclusão óbvia de que para um valor de entrada maior, o código em questão realiza uma quantidade maior de operações.
 
-Além disso, a quantidade de operações realizadas para este mesmo código será executado da mesma maneira em dois computadores com configurações de hardwares completamente diferentes, pois as linguagens de programação em geral funcionam de maneira independente das capacidades que o hardware pode oferecer. Portanto, a quantidade de operações realizadas para este código cresce da mesma maneira em um computador de última geração e em um computador da década passada.
+Além disso, a quantidade de operações realizadas para este mesmo código será executado da mesma maneira em dois computadores com configurações de hardwares completamente diferentes, pois as linguagens de programação em geral funcionam de maneira independente das capacidades que o hardware pode oferecer. Portanto, a quantidade de operações realizadas para este código cresce de maneira idêntica em um computador de última geração e em um computador da década passada.
 
-Diante do exposto, concluimos que os parâmetros em um código, que por definição são independentes da quantidade de hardware alocado, afetam diretamente na eficiência que um algoritmo pode ter durante sua execução. De maneira geral, os parâmetros que influenciam diretamente nas operações são os **tamanhos da entrada do algoritmo descrito**. Logo, para um algoritmo que verifica o valor máximo em um array o parâmetro seria o tamanho do array inserido, já um algoritmo que compara as palavras em duas frases teria como parâmetro a quantidade de palavras por frase.
+Concluimos portanto que os parâmetros em um código, que por definição são independentes da quantidade de hardware alocado, afetam diretamente na eficiência que um algoritmo pode ter durante sua execução. De maneira geral, os parâmetros que influenciam diretamente nas operações são os **tamanhos da entrada do algoritmo descrito**. Logo, para um algoritmo que verifica o valor máximo em um array o parâmetro seria o tamanho do array inserido, já um algoritmo que compara as palavras em duas frases teria como parâmetro a quantidade de palavras por frase, por exemplo.
 
-Ademais, um outro parâmetro diretamente relacionado com a eficiência de um algoritmo seria **a quantidade de operações elementares** que o algoritmo realiza. Por operações elementares entende-se as operações que são realizadas com frequência durante a execução de um código, e que por si só são rápidas de se realizar. No exemplo anterior, podemos tomar como operações básicas os seguintes trechos, denotados por **Op<sub>1</sub>**, **Op<sub>2</sub>**, **Op<sub>3</sub>** e **Op<sub>4</sub>**, respectivamente.
+Ademais, um outro parâmetro diretamente relacionado com a eficiência de um algoritmo seria **a quantidade de operações elementares** que o algoritmo realiza. Operações elementares são aquelas realizadas com frequência durante a execução de um código, e que por si só são rápidas de se realizar. No exemplo anterior, podemos tomar como operações básicas os seguintes trechos.
 
 
 ```cpp
@@ -152,13 +154,125 @@ Ademais, um outro parâmetro diretamente relacionado com a eficiência de um alg
 }
 ```
 
-Então, podemos parametrizar a quantidade total operações básicas **Op<sub>Total</sub>** em função do tamanho do array **n**, pois sabemos que para um valor **n** da entrada as operações 2 e 3 ocorrem **n** vezes, tendo assim
+Então, podemos parametrizar a quantidade total operações básicas **Op<sub>Total</sub>** em função do tamanho do array **n**, pois sabemos que para um valor **n** da entrada as operações 2 e 3 ocorrem **n** vezes. Por outro lado, as operações 1 e 4 ocorrem somente uma vez independentemente do tamanho da entrada, tendo assim
 
-<p style="text-align:center"> <b> Op<sub>Total</sub>(n) = Op<sub>1</sub> + n* Op<sub>2</sub> + n* Op<sub>3</sub> + Op<sub>4</sub> </b>
+<p style="text-align:center"> <b> Op<sub>Total</sub>(n) = 1 + n + n + 1 </b>
 
-Então, podemos mensurar a complexidade temporal de um algoritmo por meio da quantidade de operações que a execução do algoritmo demanda para uma certa entrada. Além disso, de maneira similar podemos determinar a complexidade espacial de um algoritmo por meio da quantidade de espaço demandada para a execução do algoritmo. A seguir identificaremos maneiras de analisar essas complexidades por meio de um dispositivo mais formal e conhecido na matemática, os polinômios.
+Então, podemos mensurar a **complexidade temporal de um algoritmo por meio da quantidade de operações que a execução do algoritmo demanda em função de um certo parâmetro, geralmente relacionado com a entrada**. Além disso, de maneira análoga podemos determinar a **complexidade espacial de um algoritmo por meio da quantidade de espaço demandada para a execução do algoritmo**. A seguir iremos explorar de maneira mais aprofundada como extrair de outros códigos esse tipo de estrutura matemática representada por **Op<sub>Total</sub>**, que para este caso nada mais é do que um polinômio.
 
 ## Análise de Complexidade de Algoritmos
+
+Retomando a equação que descreve a quantidade de operações que serão realizadas pelo algoritmo proposto acima
+
+<p style="text-align:center"> <b> Op<sub>Total</sub>(n) = 1 + n + n + 1 </b>
+
+Ao analisar a equação acima, percebe-se que é possível estimar o tempo total de execução do programa se caso fosse conhecido o tempo demandado para cada uma das quatro operações destacadas na equação. No entanto, determinar de maneira precisa o tempo demandado para cada uma dessas operações pode variar conforme o tipo de linguagem de programação, compilador e arquitetura do hardware utilizado, tornando uma análise por esse viés algo dificil de se generalizar. Apesar dessa dificuldade de estimar, sabemos que operações como **comparação de dados, atribuição de tipos de dados básicos da linguagem e leituras de entrada e saída** são vistas como básicas, e portanto de rápida execução, na maioria das linguagens de programação. Dessa forma, afim de simplificar nossa análise é possível assumir que as operações  possuem mesma ordem de grandeza e portanto possuem influência semelhante na estimativa de eficiência temporal do algoritmo, o que nos permite reescrever a relação acima como 
+
+<p style="text-align:center"> <b> Op<sub>Total</sub>(n) = 2 + 2*n  </b>
+
+O que de fato representa quantitativamente a quantidade de operações básicas que será executada, dado a entrada. Caso **n = 0**, então **Op<sub>Total</sub>(0) = 2**, isto é, o algoritmo não será executado pois não há máximos num array vazio, restando apenas a execução das operações de entrada e saída. Caso **n = 3**, então **Op<sub>Total</sub>(3) = 2 + 6 = 8**, que é a mesma quantidade de operações básicas destacadas na representação da execução demonstrada acima.
+
+Dessa forma, ao estudar o comportamento de um algoritmo podemos estimar fatores como eficiência temporal ao modelar a quantidade de operações em funções de parâmetros relevantes à execução do algoritmo (geralmente o tamanho da entrada).
+
+A seguir estudaremos mais três algoritmos e extrairemos a quantidade de operações que serão realizadas com elas em relação a um parâmetro.
+
+## Problema 1
+
+> Para um array de tamanho **n**, identifique se existem elementos idênticos dentro do array.
+
+Para esse problema, uma solução direta (mas não tão eficiente) para esse problema seria a seguinte:
+
+```cpp
+#include<iostream>
+
+using namespace std;
+
+int main(){
+  int n;
+
+  cin>>n;
+
+  int vetor[10000];
+
+  for(int i = 0; i< n; i++){
+    cin>>vetor[i];
+  }
+
+  bool existe_repeticao = false;
+
+  for(int i = 0; i<n; i++){
+    for(int j= 0; j<n; j++){
+      if(i != j && vetor[i] == vetor[j]){
+        existe_repeticao = true;
+        break;
+      }
+    }
+  }
+
+  if(existe_repeticao){
+    cout<<"Há repetições\n";
+  }
+  else{
+    cout<<"Não há repetições\n";
+  }
+
+  return 0;
+}
+```
+
+A ideia por trás desta solução está em comparar todos os elementos do array um com o outro e identificar se há a existência de elementos com o mesmo valor, caso exista o laço de verificação é interrompido e a execução do código é alterada para indicar a existência de repetições, caso não existam elementos idênticos após todas as verificações, o código informa que não há elementos idênticos no array.
+
+Analisando o código, é possível identificar que a etapa de verificação do array é composta de dois laços, em que o primeiro laço (indexado em **i**) percorre o array do primeiro até o último valor, e para cada uma das execuções do primeiro laço, este executa o segundo laço (indexado em **j**) que também acessa todos os valores contidos no array e realiza a operação de comparação do valor indexado em **i** com o valor indexado em **j**. Dessa forma, podemos tomar a operação de comparação do valor indexado em **i** com o valor indexado em **j** como sendo a **operação básica de funcionamento do algoritmo**, pois independente do tamanho de **n**, o funcionamento do algoritmo se dá pela existência da comparação destes valores. Sendo assim, é possível destacar as operações básicas do código acima da seguinte maneira
+
+
+```cpp
+#include<iostream>
+
+using namespace std;
+
+int main(){
+  /* Operação 1 */
+  cin>>n;
+
+  /* Operação 2 */
+  cin>>vetor[i];
+  
+  /* Operação 3 */
+  {
+  .
+  .
+  .
+  if(i != j && vetor[i] == vetor[j]){
+    existe_repeticao = true;
+    break;
+  }
+  .
+  .
+  .
+  }
+  /* Operação 4 */
+  if(existe_repeticao){
+    cout<<"Há repetições\n";
+  }
+  else{
+    cout<<"Não há repetições\n";
+  }
+}
+```
+
+A partir do trecho descrito acima, percebe-se que as operações 1 e 4 ocorrem apenas uma vez, independente do valor da entrada **n**. Além disso, a operação 2 é similar a operação 2 observada no algoritmo para achar o valor máximo num array, sendo executada **n** vezes. Por fim, a contagem de vezes que a operação 3 é executada pode ser calculada da seguinte forma: A operação 3 é executada **n** vezes por conta do segundo laço, que por sua vez, é executado **n** vezes por conta do primeiro laço, conforme a seguinte relação:  
+
+<div style="text-align:center">
+  <img src="https://render.githubusercontent.com/render/math?math=\sum_{i%20=%200}^{n-1}\sum_{j=%200}^{n-1} \cdot 1%20%20=%20n\cdot%20n%20=%20n^2">
+</div>
+
+Logo, é possível determinar a relação **Op<sub>Total</sub>(n)** somando a quantidade de vezes que cada operação será realizada em função de **n**.
+
+<div style="text-align:center">
+  <img src="https://render.githubusercontent.com/render/math?math=\textrm{Op}_{\textrm{total}}(n)%20%20%20=%201%20%2B%201%20%2B%20n%20%2B%20n^2%20=%202%20%2B%20n%20%2B%20n^2">
+</div>
+
+Ao definir **Op<sub>Total</sub>(n)** para este problema é possível ter uma noção interessante da velocidade de execução deste algoritmo em relação ao algoritmo que busca o máximo valor em um array. O algoritmo atual é um algoritmo cujo o número de operações é modelado por um polinômio do segundo grau, enquanto que o algoritmo do valor máximo é descrito como um polinômio do primeiro grau. Sendo assim, para um mesmo valor de **n**, temos que o algoritmo atual tende a realizar mais operações que o algoritmo do valor máximo. Além disso, uma outra noção interessante identificada em ambos os problemas é que a existência de uma estrutura de repetição (como loops) tornam o número de operações básicas realizadas existentes dentro da estrutura em loop função da quantidade de vezes que a repetição ocorre.
 
 ## Teorema da Aceleração Linear
 
