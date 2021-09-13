@@ -272,7 +272,134 @@ Logo, é possível determinar a relação **Op<sub>Total</sub>(n)** somando a qu
   <img src="https://render.githubusercontent.com/render/math?math=\textrm{Op}_{\textrm{total}}(n)%20%20%20=%201%20%2B%201%20%2B%20n%20%2B%20n^2%20=%202%20%2B%20n%20%2B%20n^2">
 </div>
 
-Ao definir **Op<sub>Total</sub>(n)** para este problema é possível ter uma noção interessante da velocidade de execução deste algoritmo em relação ao algoritmo que busca o máximo valor em um array. O algoritmo atual é um algoritmo cujo o número de operações é modelado por um polinômio do segundo grau, enquanto que o algoritmo do valor máximo é descrito como um polinômio do primeiro grau. Sendo assim, para um mesmo valor de **n**, temos que o algoritmo atual tende a realizar mais operações que o algoritmo do valor máximo. Além disso, uma outra noção interessante identificada em ambos os problemas é que a existência de uma estrutura de repetição (como loops) tornam o número de operações básicas realizadas existentes dentro da estrutura em loop função da quantidade de vezes que a repetição ocorre.
+Ao definir **Op<sub>Total</sub>(n)** para este problema é possível ter uma noção interessante da velocidade de execução deste algoritmo em relação ao algoritmo que busca o máximo valor em um array. O algoritmo atual é um algoritmo cujo o número de operações é modelado por um polinômio do segundo grau, enquanto que o algoritmo do valor máximo é descrito como um polinômio do primeiro grau. Sendo assim, para um mesmo valor de **n**, temos que o algoritmo atual tende a realizar mais operações que o algoritmo do valor máximo. Além disso, uma outra noção interessante identificada em ambos os problemas é que a existência de uma estrutura de repetição (como loops) torna a quantidade de operações básicas realizadas existentes dentro da estrutura em loop função do número de repetições.
+
+# Problema 2
+
+> Dado um valor inteiro. Retorne o equivalente em binário dele.
+
+Nesse problema, o objetivo é implementar o algoritmo de conversão de números de base decimal para base binária. O algoritmo funciona da seguinte forma: a partir do número inicial, dividimos o número por dois e salvamos o resultado desta operação e seu resto, e então dividimos o resultado desta operação por dois novamente salvando o resto e o resultado, até que o resultado das sucessivas operações de divisão deixe de ser divisível por dois. Por fim, a representação em binária do número será a concatenação de todos os valores de resto encontrados, você pode ler mais sobre o algoritmo de conversão binário para decimal no site [Calcular e Converter](https://calculareconverter.com.br/converter-decimal-para-binario/). A figura abaixo foi retirada do site [Calcular e Converter](https://calculareconverter.com.br/converter-decimal-para-binario/) e mostra o esquema de conversão do número 25 da base decimal para a base binária aplicando o algoritmo sugerido
+
+<p style="text-align:center">
+  <img src="/images/decimal-em-binario.png">
+</p>
+
+Dessa maneira, é possível implementar esse algoritmo em C++ da seguinte forma
+
+```cpp
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main(){
+  int n;
+
+  cin>>n;
+
+  int resposta[100];
+  int i = 0;
+
+  while(n >= 2){
+    int resto = n%2;
+    int resultado = n/2;
+
+    resposta[i] = resto;
+    n = resultado;
+    i++;
+  }
+
+  resposta[i] = n;
+
+  for(int j = i; j>=0; j--){
+      cout<<resposta[j];
+  }
+  cout<<'\n';
+  return 0;
+}
+```
+
+Novamente, a fim de calcular a quantidade de operações realizadas pelo algoritmo, podemos representar a execução do algoritmo como a concatenação de operações básicas, que nesse caso se dão da seguinte maneira.
+
+```cpp
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main(){
+  /* Operação Básica 1 */
+  cin>>n;
+
+ /* Operação Básica 2*/
+  int resto = n%2;
+  int resultado = n/2;
+
+  resposta[i] = resto;
+  n = resultado;
+  i++;
+  
+
+  /* Operação Básica 3 */
+  resposta[i] = n;
+
+  /* Operação Básica 4 */
+  cout<<resposta[j];
+  
+  cout<<'\n';
+  return 0;
+}
+```
+
+Ao análisar o código percebemos que as operações básicas 1 e 3 ocorrem somente uma vez para qualquer valor de n. No entanto, o laço de repetição que gera os parâmetros para as operações básicas 2 e 4 não é igual ao valor do tamanho da entrada, uma vez que a repetição da operação 2 ocorre enquanto a entrada for divisível por dois. Além disso, o loop da operação 4 tem o mesmo tamanho da quantidade de repetições do loop da operação 2. Nesse sentido, é necessário que identifiquemos uma relação do valor da entrada **n** com a quantidade de repetições geradas pelos loops a fim de representar uma função **Op<sub>Total</sub>(n)** que relacione as operações realizadas pelo algoritmo em função da entrada.
+
+Ao observar o fluxo de execução do algoritmo, percebe-se que o valor inicial **n** acaba sendo dividido por 2 **i** vezes, que também é a quantidade de vezes que o loop da operação básica 2 é executado. Sendo assim, tomando um **n** qualquer, é possível representar a cada repetição o seu novo valor da seguinte forma
+
+<div style="text-align:center">
+  <img src="https://render.githubusercontent.com/render/math?math=%5B%20n%20%2C%20\dfrac{n}{2}%20%2C%20\dfrac{n}{4}%20%2C%20\dfrac{n}{8}%20%2C%20...%20%5D">
+</div>
+
+Observando o comportamento do valor de **n** ao longo das repetições do loop em questão, identifica-se que o decrescimento de **n** pode ser visto como uma **Progressão Geométrica de razão 1/2**. Dessa forma, podemos utilizar a fórmula para encontrar o termo final de uma Progressão Geométrica, que encerra o laço de repetição, dado pelo valor 1 (pois se **n** inicia maior ou igual a 2, o menor resultado que pode ser definido da divisão de **n** por 2 é igual a 1). Além de saber o valor final da progressão analisada, sabemos que esta progressão ocorrerá após **i** repetições, sendo assim, calcula-se o valor do termo **a<sub>i-1</sub>(n)**
+
+<div style="text-align:center">
+  <img src="https://render.githubusercontent.com/render/math?math=a_{k}%20=%20a_{1}%20\cdot%20q^{k-1};%20">
+</div>
+
+<div style="text-align:center">
+  <img src="https://render.githubusercontent.com/render/math?math=a_{1}%20=%20n%20%3B%20%20q%20=%20\dfrac{1}{2}%20%3B%20k%20=%20i%20%3B">
+</div>
+
+<div style="text-align:center">
+  <img src="https://render.githubusercontent.com/render/math?math=1%20=%20n%20\cdot%20(\dfrac{1}{2})^{i-1}">
+</div>
+
+<div style="text-align:center">
+  <img src="https://render.githubusercontent.com/render/math?math=2^{i-1}%20=%20n">
+</div>
+
+Aplicando logaritmo na base 2 em ambos os lados da equação, temos o número de repetições **i** em função do tamanho do valor **n**
+
+<div style="text-align:center">
+  <img src="https://render.githubusercontent.com/render/math?math=\log_{2}{(n)}%20=%20i%20-%201">
+</div>
+
+<div style="text-align:center">
+  <img src="https://render.githubusercontent.com/render/math?math=\log_{2}{(n)} + 1 = i ">
+</div>
+
+Por fim, dado que as operações 2 e 4 estão dentro de um loop que se repete **i** vezes, e sendo **i** representado através do valor da entrada, é possível escrever a função **Op<sub>Total</sub>(n)** para o algoritmo abaixo como sendo
+
+<div style="text-align:center">
+  <img src="https://render.githubusercontent.com/render/math?math=\textrm{Op}_{\textrm{total}}(n)%20=%202%20%2B%20\log{2}{(n)}%20%2B%201%20%2B%20\log{2}{(n)}%20%2B%201%20=%20%20%204%20%2B%202%20\cdot%20\log{2}{(n)}">
+</div>
+
+Após solucionar o problema 2, percebe-se que nem sempre o número de execuções de uma operação é igual ao tamanho do parâmetro de entrada do algoritmo, dependendo da maneira como as condições do código são impostas, a quantidade de operações executadas pode ser escrita em função da variável de entrada de outras maneiras. Além disso, ao comparar a função **Op<sub>Total</sub>(n)** do problema atual com as funções calculadas anteriormente, percebemos que este algoritmo executa menos operações que todos os outros algoritmos mostrados acima para valores elevados de **n**, para **n = 32 o algoritmo do problema atual executa 14 operações ao total, enquanto que o algoritmo do problema 1 executa 1192 operações, por exemplo**.
+
+A seguir, analisaremos um último algoritmo a fim de identificar um comportamento interessante neste.
+
+# Problema 3
+
+> Dado um valor de **n**, calcule o **n-ésimo** número da sequência de Fibonacci.
+
+
 
 ## Teorema da Aceleração Linear
 
